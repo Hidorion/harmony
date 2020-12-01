@@ -1,9 +1,10 @@
 from django.db import models
-
+from .account import Association, User, Account
+from .type import Image, Tips, Events
 
 class Category(models.Model):
     category_name = models.CharField(max_length=-1)
-    id_parent = models.ForeignKey('self', models.DO_NOTHING, db_column='id_parent', blank=True, null=True)
+    parent = models.ForeignKey('self')
 
     class Meta:
         managed = True
@@ -18,18 +19,20 @@ class Country(models.Model):
         db_table = 'country'
 
 
-class Department(models.Model):
-    department_name = models.CharField(max_length=-1)
-    id_region = models.ForeignKey('Region', models.DO_NOTHING, db_column='id_region')
-
-    class Meta:
-        managed = True
-        db_table = 'department'
-
 class Region(models.Model):
     region_name = models.CharField(max_length=-1)
-    id_country = models.ForeignKey(Country, models.DO_NOTHING, db_column='id_country')
+    country = models.ForeignKey(Country)
 
     class Meta:
         managed = True
         db_table = 'region'
+
+        
+
+class Department(models.Model):
+    department_name = models.CharField(max_length=-1)
+    region = models.ForeignKey(Region)
+
+    class Meta:
+        managed = True
+        db_table = 'department'
