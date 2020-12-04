@@ -3,4 +3,4 @@ from django.http import HttpResponse
 
 
 def media(request):
-    return HttpResponse("Cela affiche le continue")
+    return HttpResponse("Cela affiche le contenu")

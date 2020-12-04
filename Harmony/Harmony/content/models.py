@@ -1,15 +1,15 @@
 from django.db import models
-from Harmony.Models.filter import Category, Department
-from Harmony.Models.account import Account
+# from filters.models import Category, Department
+#from Harmony.Models.account import Account
 
 
 class Event(models.Model):
     title = models.CharField(max_length=-1)
     description = models.CharField(max_length=1000)
-    department = models.ForeignKey(Department)
+    department = models.ForeignKey('filters.Department', on_delete=models.CASCADE)
     date_start = models.DateField()
     date_end = models.DateField()
-    category = models.ManyToManyField(Category)
+    category = models.ManyToManyField('filters.Category', on_delete=models.CASCADE)
     account = models.ForeignKey(Account)
     approved = models.BooleanField(null=False , blank=True)
 
@@ -23,9 +23,9 @@ class Image(models.Model):
     url = models.URLField(max_length=-1)
     title = models.CharField(max_length=-1)
     description = models.CharField(max_length=1000)
-    category = models.ManyToManyField(Category)
+    category = models.ManyToManyField('filters.Category', on_delete=models.CASCADE)
     posting_date = models.DateField()
-    department = models.ForeignKey(Department)
+    department = models.ForeignKey('filters.Department', on_delete=models.CASCADE)
     approved = models.BooleanField(null=False , blank=True)
 
     class Meta:
@@ -36,8 +36,8 @@ class Image(models.Model):
 class Tip(models.Model):
     title = models.CharField(max_length=-1)
     description = models.CharField(max_length=1000)
-    category = models.ManyToManyField(Category)
-    account = models.ForeignKey(Account)
+    category = models.ManyToManyField('filters.Category', on_delete=models.CASCADE)
+    account = models.ForeignKey(Account, on_delete=models.CASCADE)
     approved = models.BooleanField(null=False , blank=True)
     class Meta:
         managed = True
