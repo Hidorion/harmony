@@ -4,13 +4,13 @@ from django.db import models
 
 
 class Event(models.Model):
-    title = models.CharField(max_length=-1)
+    title = models.CharField(max_length=50)
     description = models.CharField(max_length=1000)
     department = models.ForeignKey('filters.Department', on_delete=models.CASCADE)
     date_start = models.DateField()
     date_end = models.DateField()
-    category = models.ManyToManyField('filters.Category', on_delete=models.CASCADE)
-    account = models.ForeignKey(Account)
+    category = models.ManyToManyField('filters.Category')
+    # account = models.ForeignKey('Account', on_delete=models.CASCADE)
     approved = models.BooleanField(null=False , blank=True)
 
     class Meta:
@@ -19,11 +19,11 @@ class Event(models.Model):
 
 
 class Image(models.Model):
-    account = models.ForeignKey(Account)
-    url = models.URLField(max_length=-1)
-    title = models.CharField(max_length=-1)
+    # account = models.ForeignKey('Account')
+    url = models.URLField(max_length=150)
+    title = models.CharField(max_length=50)
     description = models.CharField(max_length=1000)
-    category = models.ManyToManyField('filters.Category', on_delete=models.CASCADE)
+    category = models.ManyToManyField('filters.Category')
     posting_date = models.DateField()
     department = models.ForeignKey('filters.Department', on_delete=models.CASCADE)
     approved = models.BooleanField(null=False , blank=True)
@@ -34,10 +34,10 @@ class Image(models.Model):
 
 
 class Tip(models.Model):
-    title = models.CharField(max_length=-1)
+    title = models.CharField(max_length=50)
     description = models.CharField(max_length=1000)
-    category = models.ManyToManyField('filters.Category', on_delete=models.CASCADE)
-    account = models.ForeignKey(Account, on_delete=models.CASCADE)
+    category = models.ManyToManyField('filters.Category')
+    # account = models.ForeignKey('Account', on_delete=models.CASCADE)
     approved = models.BooleanField(null=False , blank=True)
     class Meta:
         managed = True
