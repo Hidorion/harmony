@@ -11,7 +11,7 @@ class Event(models.Model):
     date_end = models.DateField()
     category = models.ManyToManyField(Category)
     account = models.ForeignKey(Account)
-    approved = models.BooleanField
+    approved = models.BooleanField(null=False , blank=True)
 
     class Meta:
         managed = True
@@ -26,7 +26,7 @@ class Image(models.Model):
     category = models.ManyToManyField(Category)
     posting_date = models.DateField()
     department = models.ForeignKey(Department)
-    approved = models.BooleanField
+    approved = models.BooleanField(null=False , blank=True)
 
     class Meta:
         managed = True
@@ -38,7 +38,7 @@ class Tip(models.Model):
     description = models.CharField(max_length=1000)
     category = models.ManyToManyField(Category)
     account = models.ForeignKey(Account)
-    approved = models.BooleanField
+    approved = models.BooleanField(null=False , blank=True)
     class Meta:
         managed = True
         db_table = 'tip'
