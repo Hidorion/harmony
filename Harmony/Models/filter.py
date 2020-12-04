@@ -1,6 +1,5 @@
 from django.db import models
-from .account import Association, User, Account
-from .type import Image, Tips, Events
+
 
 class Category(models.Model):
     category_name = models.CharField(max_length=-1)
