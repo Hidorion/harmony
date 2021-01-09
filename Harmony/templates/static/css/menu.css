@@ -1,0 +1,68 @@
+/* MAIN MENU */
+    /* Colours code */
+:root{
+    --green: #426D49;
+    --Dgreen : #25522b;
+    --Ygreen : #b5e61d;
+}
+
+body{
+    margin : 0;
+    padding : 0;
+    font-family: 'Yusei Magic', sans-serif;
+    width: 100%;
+}
+
+nav.desktop{
+    display: flex;    
+    background: var(--green);
+    background: url("../img/banner.png");
+    background-repeat:no-repeat;
+    background-size:100%;
+    width: 100%;
+}
+ul {
+    list-style: none;
+    display: inline-flex;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: inherit;
+    padding-left: 0; 
+}
+
+li {
+    display: table-cell;
+    vertical-align: middle;
+    margin: auto;
+    font-size: 2vw;    
+}
+
+a {    
+    color:white;
+    text-decoration: none;
+    text-shadow: 1px 1px 10px var(--green) ;
+    text-align: center;
+}
+
+.login {
+    margin-top:50% ;
+    margin-bottom: 50%;
+    width: auto;
+    height: auto;
+}
+
+@media only screen and (max-width: 768px) {
+    nav.desktop{
+        display: none;
+    }
+    a {
+        color:red;
+        font-size: 4vw;
+    }
+    nav.mobile{
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        background-color: var(--Dgreen);
+    }
+}

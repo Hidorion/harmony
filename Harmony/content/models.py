@@ -19,7 +19,7 @@ from django.db import models
 
 
 class Image(models.Model):
-    account = models.ForeignKey('login.Account', on_delete=models.CASCADE)
+    account = models.ForeignKey('login.UserData', on_delete=models.CASCADE)
     url = models.URLField(max_length=500)
     title = models.CharField(max_length=50)
     description = models.CharField(max_length=1000)

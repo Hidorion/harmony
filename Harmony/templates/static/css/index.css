@@ -1,0 +1,15 @@
+/* INDEX PAGE */
+:root{
+    --green: #426D49;
+    --Dgreen : #25522b;
+    --Ygreen : #b5e61d;
+}
+body{
+    margin : 0;
+    padding : 0;
+}
+
+.index p {
+    color:var(--Dgreen);
+    text-align: center;
+}

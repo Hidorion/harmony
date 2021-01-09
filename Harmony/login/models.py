@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 class UserData(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     department = models.ForeignKey('filters.Department', on_delete=models.CASCADE)
-    asso = models.ManyToManyField('login.Association', blank=True,null=True )
+    asso = models.ManyToManyField('login.Association', blank=True )
 
     def __str__(self):
         """
