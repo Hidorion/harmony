@@ -3,19 +3,19 @@ from django.db import models
 #from Harmony.Models.account import Account
 
 
-class Event(models.Model):
-    title = models.CharField(max_length=50)
-    description = models.CharField(max_length=1000)
-    department = models.ForeignKey('filters.Department', on_delete=models.CASCADE)
-    date_start = models.DateField()
-    date_end = models.DateField()
-    category = models.ManyToManyField('filters.Category')
-    account = models.ForeignKey('login.Account', on_delete=models.CASCADE)
-    approved = models.BooleanField(null=False , blank=True)
+# class Event(models.Model):
+#     title = models.CharField(max_length=50)
+#     description = models.CharField(max_length=1000)
+#     department = models.ForeignKey('filters.Department', on_delete=models.CASCADE)
+#     date_start = models.DateField()
+#     date_end = models.DateField()
+#     category = models.ManyToManyField('filters.Category')
+#     account = models.ForeignKey('login.Account', on_delete=models.CASCADE)
+#     approved = models.BooleanField(null=False , blank=True)
 
-    class Meta:
-        managed = True
-        db_table = 'event'
+#     class Meta:
+#         managed = True
+#         db_table = 'event'
 
 
 class Image(models.Model):
@@ -37,7 +37,7 @@ class Tip(models.Model):
     title = models.CharField(max_length=50)
     description = models.CharField(max_length=1000)
     category = models.ManyToManyField('filters.Category')
-    account = models.ForeignKey('login.Account', on_delete=models.CASCADE)
+    owner = models.ForeignKey('login.UserData', on_delete=models.CASCADE)
     approved = models.BooleanField(null=False , blank=True)
     class Meta:
         managed = True
