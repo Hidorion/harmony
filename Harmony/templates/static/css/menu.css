@@ -13,56 +13,77 @@ body{
     width: 100%;
 }
 
-nav.desktop{
+.menu nav.desktop{
     display: flex;    
     background: var(--green);
     background: url("../img/banner.png");
     background-repeat:no-repeat;
     background-size:100%;
     width: 100%;
+    position:fixed;
+    top:0;
+    z-index: 10;
 }
-ul {
+.menu ul {
     list-style: none;
     display: inline-flex;
     margin-top: auto;
     margin-bottom: auto;
-    width: inherit;
+    width: 100%;
     padding-left: 0; 
 }
 
-li {
-    display: table-cell;
-    vertical-align: middle;
+.menu li {
+    display: table;
     margin: auto;
     font-size: 2vw;    
 }
 
-a {    
+.menu a {    
     color:white;
     text-decoration: none;
     text-shadow: 1px 1px 10px var(--green) ;
     text-align: center;
 }
 
-.login {
-    margin-top:50% ;
-    margin-bottom: 50%;
+.menu .logo {
+    display:table;
+    margin-top:25% ;
+    margin-bottom: 25%;
     width: auto;
     height: auto;
 }
+.menu nav.mobile{
+    display: none;
+    z-index: 10;
+}
 
 @media only screen and (max-width: 768px) {
-    nav.desktop{
+    .menu nav.desktop{
         display: none;
     }
-    a {
-        color:red;
-        font-size: 4vw;
-    }
-    nav.mobile{
+    
+    .menu nav.mobile{
+        display: flex;    
+        background: var(--green);
+        background: url("../img/banner.png");
+        background-repeat:no-repeat;
+        background-size:100%;
+        width: 100%;
+        height: 10%;
         position: fixed;
         bottom: 0;
         right: 0;
-        background-color: var(--Dgreen);
+    }
+    .menu .logo{
+        margin: auto;
+        max-width: 100px;
+        max-height: 50px;
+    }
+}
+@media only screen and (max-width: 425px) {
+    .menu .logo{
+        max-width: 50px;
+        max-height: 40px;
     }
 }

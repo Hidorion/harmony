@@ -3,14 +3,15 @@
 
     <head>
         <meta charset="utf-8">
+        <meta name="description" content="menu of the Harmony website">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>{% block navigator_title %}Harmony : Accueil{% endblock navigator_title %}</title>
         <link rel="shortcut icon" type="image/ico" href="\templates\favicon.ico"/>
         {% load static %}
         <link rel="stylesheet" type="text/css" href="{% static 'css\menu.css' %}">
-        <link rel="stylesheet" type="text/css" href="{% static 'css\index.css' %}">
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap" rel="stylesheet"> 
+        {% block link%}{% endblock %}
     </head>
 
     <body>
@@ -27,18 +28,31 @@
                         <a href="/content/tip">Tips</a>
                     </li>
                     <li>
-                        <img class="login" alt="se connecter" title="Logo pour login" src="{% static 'img\pictoprofil.png' %}" href="/login"/>
+                        <a href="/association">Association</a>
+                    </li>
+                    <li>
+                        <a href="/login"><img class="logo" alt="se connecter" title="Logo pour login" src="{% static 'img\picto_profil.png' %}" /></a>
                     </li>
                 </ul>
             </nav>
             <nav class='mobile'>
-                <label id="nav-icon1" for="nav-menu1">
-                    <span>Testmobile</span>
-                    <span>Testmobilee</span>
-                    <span>Testmobileee</span>
-                    <span>Testmobileeee</span>
-                </label>
-                <input type="checkbox" id="nav-menu1">
+                <ul>
+                    <li>
+                        <a href="/content/"><img class="logo" alt="accueil" title="Logo pour accueil" src="{% static 'img\picto_home.png' %}" /></a>
+                    </li>
+                    <li>
+                        <a href="/content/image"><img class="logo" alt="Galerie" title="Logo pour galerie" src="{% static 'img\picto_photo.png' %}" /></a>
+                    </li>
+                    <li>
+                        <a href="/content/tip"><img class="logo" alt="Tips" title="Logo pour tips" src="{% static 'img\picto_tips.png' %}" /></a>
+                    </li>
+                    <li>
+                        <a href="/content/tip"><img class="logo" alt="Asso" title="Logo pour asso" src="{% static 'img\picto_asso.png' %}" /></a>
+                    </li>
+                    <li>
+                        <a href="/login"><img class="logo" alt="se connecter" title="Logo pour login" src="{% static 'img\picto_profil.png' %}" /></a>
+                    </li>
+                </ul>
             </nav>
         </div>
     </body>

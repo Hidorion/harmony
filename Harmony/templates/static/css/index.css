@@ -1,15 +1,165 @@
 /* INDEX PAGE */
+
 :root{
     --green: #426D49;
     --Dgreen : #25522b;
     --Ygreen : #b5e61d;
 }
-body{
+
+.index body{
     margin : 0;
     padding : 0;
 }
 
+.index{
+    margin-left:10%;
+    margin-right:10%;
+    padding-top:150px; /*not hidden by desktop menu*/
+    width: fit-content;
+}
+
 .index p {
-    color:var(--Dgreen);
+    color:var(--green);
     text-align: center;
+}
+
+.index h1{
+    text-align: center;
+    color: var(--Dgreen);
+}
+
+.index ul{
+    padding-left: 0;
+    list-style: none;
+    display: inline-flex;
+    margin: auto;
+    width: auto;
+}
+
+.index .button {
+    background-color: var(--green);
+    border: solid 1px var(--Ygreen);
+    color: white;
+    font-family: 'Yusei Magic', sans-serif;
+    text-align: center;
+    display: table;
+    margin: auto;
+    font-size: 1.5vw;
+    cursor: pointer;
+    margin-top:4%;
+    margin-bottom:4%;
+}
+
+/* Galerie */
+
+.index .galerie{
+    display: table;
+    width: 100%;
+    margin: auto;
+    opacity: 1;
+    transition: .5s ease;
+    backface-visibility: hidden;
+}
+
+#galerie ul{
+    width:100%;
+}
+
+#galerie li{
+    display: table;
+    margin: auto;
+}
+
+.div-event{
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    border:solid 1px var(--Dgreen);
+    
+}
+.div-img-menu{
+    background-color: var(--Ygreen);
+    color: var(--Dgreen);
+    font-size: 1vw;
+    padding: 16px 32px;
+}
+.contain{
+    position: relative;
+    border:solid 1px var(--Dgreen)
+}
+.contain:hover .galerie {
+    opacity: 0.3;
+}
+
+.contain:hover .div-event {
+    opacity: 1;
+}
+
+/* Tips */
+
+.index .div-tips{
+    margin-left:10%;
+    margin-right:10%;
+    border:solid 1px var(--green)
+}
+
+.index .div-tips ul{
+    padding-left:0;
+    width: 100%;
+    display: block;
+}
+
+.index .div-tips li{
+    margin-left: 0%;
+    width: 100%;
+    margin: auto;
+    font-size: 1.5vw;
+}
+
+/* Associations */
+
+#asso ul{
+    width:100%
+}
+/* Responsive */
+@media only screen and (max-width: 768px) {
+/* Index Responsive page */
+    .index{
+        padding-top:0px;
+        padding-bottom: 80px; /*not hidden by mobile menu*/
+        margin-left: 0%;
+        margin-right:0% ;
+    }
+
+    .index .hidden{
+        display: none
+    }
+
+    .index .button{
+        font-size:3vw;
+    }
+
+    section{
+        display: table;
+        margin: auto;
+        
+    }
+/* Mobile Galerie */
+.div-img-menu{
+    font-size:5vw;
+}    
+/* Mobile Tips */
+
+    .index .div-tips li{
+        margin-left: 0%;
+        width: 100%;
+        margin: auto;
+        font-size: 3vw;
+    }
+/* Mobile Associations */
+
 }

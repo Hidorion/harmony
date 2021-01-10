@@ -1,9 +1,123 @@
 {% extends "menu/menu_layout.html" %}
 
 {% block navigator_title %}Harmony{% endblock navigator_title %}
+{% load static %}
+
+{% block link%}
+<link rel="stylesheet" type="text/css" href="{% static 'css\index.css' %}">
+{% endblock %}
+
 
 {% block content %}
-    <!-- {% if latest_plants %}
+<body>
+    <div class='index'>
+        <section id='galerie'>
+            <h1>La Nature en image</h1>
+                <ul>
+                    <li class="contain">
+                        <img class="galerie hidden" alt="image left" title="exemple photo" src="{% static 'img\Harmony.png' %}" />
+                        <div class="div-event hidden"><div class="div-img-menu">Voir</div></div>
+                    </li>
+                    <li class="contain">
+                        <img class="galerie mobile-show" alt="image middle" title="exemple photo" src="{% static 'img\Harmony.png' %}" />
+                        <div class="div-event"><div class="div-img-menu">Voir</div></div>
+                    </li>
+                    <li class="contain">
+                        <img class="galerie hidden" alt="image right" title="exemple photo" src="{% static 'img\Harmony.png' %}" />
+                        <div class="div-event hidden"><div class="div-img-menu">Voir</div></div>
+                    </li>
+                </ul>
+        </section>
+        <section id='tips'>
+            <h1>La Nature et ses secrets</h1>
+                <ul>
+                    <li>
+                        <div class='div-tips hidden'>
+                            <ul>
+                                <li>Auteur : Harmony</li>
+                                <li>Date : 01/2021</li>
+                                <li>Catégorie : Test</li>
+                                <li>Titre : Utiliser Harmony</li>
+                                <li>Harmony est simple d'utilisation. Il permet notamment de partager et d'échanger ses savoirs ainsi que son amour de la nature et sa volonté d'agir pour la présever</li>
+                                <li><button class="button">Voir plus</button></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <div class='div-tips mobile-show'>
+                            <ul>
+                                <li>Auteur : Harmony</li>
+                                <li>Date : 01/2021</li>
+                                <li>Catégorie : Test2</li>
+                                <li>Titre : Utiliser Harmony</li>
+                                <li>Harmony est simple d'utilisation. Il permet notamment de partager et d'échanger ses savoirs ainsi que son amour de la nature et sa volonté d'agir pour la présever</li>
+                                <li><button class="button">Voir plus</button></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <div class='div-tips hidden'>
+                            <ul>
+                                <li>Auteur : Harmony</li>
+                                <li>Date : 01/2021</li>
+                                <li>Catégorie : Test3</li>
+                                <li>Titre : Utiliser Harmony</li>
+                                <li>Harmony est simple d'utilisation. Il permet notamment de partager et d'échanger ses savoirs ainsi que son amour de la nature et sa volonté d'agir pour la présever</li>
+                                <li><button class="button">Voir plus</button></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+        </section>
+        <section id='asso'>
+            <h1>La Nature et ses héros</h1>
+                <ul>
+                    <li>Asso 1</li>
+                    <li>Asso 2</li>
+                    <li>Asso 3</li>
+                </ul>
+        </section>
+        <section id='join-us'>
+            <p>Mélangeons tout ces éléments et nous serons en - Harmony - avec elle !</p>
+            <p>Toi aussi, participe à ta manière</p>
+        </section>
+        <section id='join-us'>
+            <p>Mélangeons tout ces éléments et nous serons en - Harmony - avec elle !</p>
+            <p>Toi aussi, participe à ta manière</p>
+        </section>
+        <section id='join-us'>
+            <p>Mélangeons tout ces éléments et nous serons en - Harmony - avec elle !</p>
+            <p>Toi aussi, participe à ta manière</p>
+        </section>
+        <section id='join-us'>
+            <p>Mélangeons tout ces éléments et nous serons en - Harmony - avec elle !</p>
+            <p>Toi aussi, participe à ta manière</p>
+        </section>
+        <section id='join-us'>
+            <p>Mélangeons tout ces éléments et nous serons en - Harmony - avec elle !</p>
+            <p>Toi aussi, participe à ta manière</p>
+        </section>
+        <section id='join-us'>
+            <p>Mélangeons tout ces éléments et nous serons en - Harmony - avec elle !</p>
+            <p>Toi aussi, participe à ta manière</p>
+        </section>
+        <section id='join-us'>
+            <p>Mélangeons tout ces éléments et nous serons en - Harmony - avec elle !</p>
+            <p>Toi aussi, participe à ta manière</p>
+        </section>
+        <section id='join-us'>
+            <p>Mélangeons tout ces éléments et nous serons en - Harmony - avec elle !</p>
+            <p>Toi aussi, participe à ta manière122</p>
+        </section>
+        
+    </div>
+</body>
+{% endblock %}
+
+
+
+
+<!-- {% if latest_plants %}
         <ul class="ElementList">
             {% for plant in latest_plants %}
                 <li>
@@ -22,68 +136,3 @@
     {% else %}
         <p>Pas de plantes en stock :-(</p>
     {% endif %} -->
-<div class='index'>
-    <p>Coucou, ça fonctionne si c'est darkbluturquoise</p>
-    <p>Coucou, ça fonctionne si c'est darkbluturquoise</p>
-    <p>Coucou, ça fonctionne si c'est darkbluturquoise</p>
-    <p>Coucou, ça fonctionne si c'est darkbluturquoise</p>
-    <p>Coucou, ça fonctionne si c'est darkbluturquoise</p>
-    <p>Coucou, ça fonctionne si c'est darkbluturquoise</p>
-    <p>Coucou, ça fonctionne si c'est darkbluturquoise</p>
-    <p>Coucou, ça fonctionne si c'est darkbluturquoise</p>
-    <p>Coucou, ça fonctionne si c'est darkbluturquoise</p>
-    <p>Coucou, ça fonctionne si c'est darkbluturquoise</p>
-    <p>Coucou, ça fonctionne si c'est darkbluturquoise</p>
-    <p>Coucou, ça fonctionne si c'est darkbluturquoise</p>
-    <p>Coucou, ça fonctionne si c'est darkbluturquoise</p>
-    <p>Coucou, ça fonctionne si c'est darkbluturquoise</p>
-    <p>Coucou, ça fonctionne si c'est darkbluturquoise</p>
-    <p>Coucou, ça fonctionne si c'est darkbluturquoise</p>
-    <p>Coucou, ça fonctionne si c'est darkbluturquoise</p>
-    <p>Coucou, ça fonctionne si c'est darkbluturquoise</p>
-    <p>Coucou, ça fonctionne si c'est darkbluturquoise</p>
-    <p>Coucou, ça fonctionne si c'est darkbluturquoise</p>
-    <p>Coucou, ça fonctionne si c'est darkbluturquoise</p>
-    <p>Coucou, ça fonctionne si c'est darkbluturquoise</p>
-    <p>Coucou, ça fonctionne si c'est darkbluturquoise</p>
-    <p>Coucou, ça fonctionne si c'est darkbluturquoise</p>
-    <p>Coucou, ça fonctionne si c'est darkbluturquoise</p>
-    <p>Coucou, ça fonctionne si c'est darkbluturquoise</p>
-    <p>Coucou, ça fonctionne si c'est darkbluturquoise</p>
-    <p>Coucou, ça fonctionne si c'est darkbluturquoise</p>
-    <p>Coucou, ça fonctionne si c'est darkbluturquoise</p>
-    <p>Coucou, ça fonctionne si c'est darkbluturquoise</p>
-    <p>Coucou, ça fonctionne si c'est darkbluturquoise</p>
-    <p>Coucou, ça fonctionne si c'est darkbluturquoise</p>
-    <p>Coucou, ça fonctionne si c'est darkbluturquoise</p>
-    <p>Coucou, ça fonctionne si c'est darkbluturquoise</p>
-    <p>Coucou, ça fonctionne si c'est darkbluturquoise</p>
-    <p>Coucou, ça fonctionne si c'est darkbluturquoise</p>
-    <p>Coucou, ça fonctionne si c'est darkbluturquoise</p>
-    <p>Coucou, ça fonctionne si c'est darkbluturquoise</p>
-    <p>Coucou, ça fonctionne si c'est darkbluturquoise</p>
-    <p>Coucou, ça fonctionne si c'est darkbluturquoise</p>
-    <p>Coucou, ça fonctionne si c'est darkbluturquoise</p>
-    <p>Coucou, ça fonctionne si c'est darkbluturquoise</p>
-    <p>Coucou, ça fonctionne si c'est darkbluturquoise</p>
-    <p>Coucou, ça fonctionne si c'est darkbluturquoise</p>
-    <p>Coucou, ça fonctionne si c'est darkbluturquoise</p>
-    <p>Coucou, ça fonctionne si c'est darkbluturquoise</p>
-    <p>Coucou, ça fonctionne si c'est darkbluturquoise</p>
-    <p>Coucou, ça fonctionne si c'est darkbluturquoise</p>
-    <p>Coucou, ça fonctionne si c'est darkbluturquoise</p>
-    <p>Coucou, ça fonctionne si c'est darkbluturquoise</p>
-    <p>Coucou, ça fonctionne si c'est darkbluturquoise</p>
-    <p>Coucou, ça fonctionne si c'est darkbluturquoise</p>
-    <p>Coucou, ça fonctionne si c'est darkbluturquoise</p>
-    <p>Coucou, ça fonctionne si c'est darkbluturquoise</p>
-    <p>Coucou, ça fonctionne si c'est darkbluturquoise</p>
-    <p>Coucou, ça fonctionne si c'est darkbluturquoise</p>
-    <p>Coucou, ça fonctionne si c'est darkbluturquoise</p>
-    <p>Coucou, ça fonctionne si c'est darkbluturquoise</p>
-    <p>Coucou, ça fonctionne si c'est darkbluturquoise</p>
-    <p>Coucou, ça fonctionne si c'est darkbluturquoise</p>
-    <p>Coucou, ça fonctionne si c'est darkbluturquoise</p>
-    <p>Coucou, ça fonctionne si c'est darkbluturquoise</p>
-</div>
-{% endblock %}
