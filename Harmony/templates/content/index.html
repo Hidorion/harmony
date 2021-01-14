@@ -46,52 +46,43 @@
         <section id='tips'>
             <h1>La Nature et ses secrets</h1>
                 <ul>
-                    <li>
-                        {% for tip in tips %}
-                        <div class='div-tips m-hidden'>
-                            <ul>
-                                <li>{{ tip.title }}</li>
-                                <li>Date : 01/2021</li>
-                                <li>Catégorie :  {% for cat in tip.category.all %}{{ cat }} {% endfor %}</li>
-                                <li>Par : {{ tip.owner }}</li>
-                                <li>{{ tip.description }}</li>
-                                <li><button class="button">Voir</button></li>
-                            </ul>
-                        </div>
-                        {% endfor %}
-                    </li>
-                    <li>
-                        <div class='div-tips'>
-                            <ul>
-                                <li>Auteur : Harmony</li>
-                                <li>Date : 01/2021</li>
-                                <li>Catégorie : Test2</li>
-                                <li>Titre : Utiliser Harmony</li>
-                                <li>Harmony est simple d'utilisation. Il permet notamment de partager et d'échanger ses savoirs ainsi que son amour de la nature et sa volonté d'agir pour la présever</li>
-                                <li><button class="button">Voir</button></li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li>
-                        <div class='div-tips m-hidden'>
-                            <ul>
-                                <li>Auteur : Harmony</li>
-                                <li>Date : 01/2021</li>
-                                <li>Catégorie : Test3</li>
-                                <li>Titre : Utiliser Harmony</li>
-                                <li>Harmony est simple d'utilisation. Il permet notamment de partager et d'échanger ses savoirs ainsi que son amour de la nature et sa volonté d'agir pour la présever</li>
-                                <li><button class="button">Voir</button></li>
-                            </ul>
-                        </div>
-                    </li>
+                    {% for tip in tips %}
+                        {% if forloop.counter == 4 %}
+                        {% else %}
+                            {% if forloop.first %}    
+                            <li class="li-tips-frame">
+                                <div class='div-tips'>
+                                    <ul>
+                                        <li>{{ tip.title }}</li>
+                                        <li>Catégorie :  {% for cat in tip.category.all %}{{ cat }} {% endfor %}</li>
+                                        <li>Par : {{ tip.owner }}</li>
+                                        <li>{{ tip.description|safe }}</li>
+                                        <li><button class="button">Voir</button></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            {% else %}
+                            <li class="li-tips-frame">
+                                <div class='div-tips m-hidden'>    
+                                    <ul>
+                                        <li>{{ tip.title }}</li>
+                                        <li>Catégorie :  {% for cat in tip.category.all %}{{ cat }} {% endfor %}</li>
+                                        <li>Par : {{ tip.owner }}</li>
+                                        <li>{{ tip.description|safe }}</li>
+                                        <li><button class="button">Voir</button></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            {% endif %}
+                        {% endif %}
+                    {% endfor %}
                 </ul>
         </section>
         <section id='asso'>
             <h1>La Nature et ses héros</h1>
             {% for asso in associations %}
-            <!-- {{ forloop.counter }}
                 {% if forloop.counter == 4 %}
-            {% else %} -->    
+            {% else %}   
             <div class='div-asso'>
                     <img class="img-logo-asso" alt="logo association" title="exemple photo" src="{{ asso.logo }}" />
                     <ul>
@@ -102,7 +93,7 @@
                         <li><button class="button">Découvrir</button></li>
                     </ul>
                 </div>
-                <!-- {% endif %} -->
+                {% endif %}
                 {% endfor %}
         </section>
         <section id='join-us'>

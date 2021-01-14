@@ -1,4 +1,5 @@
 from django.db import models
+from ckeditor.fields import RichTextField
 # from filters.models import Category, Department
 #from Harmony.Models.account import Account
 
@@ -44,7 +45,8 @@ class Tip(models.Model):
     category = models.ManyToManyField('filters.Category')
     owner = models.ForeignKey('login.UserData', on_delete=models.CASCADE)
     approved = models.BooleanField(null=False , blank=True)
-    
+    content = RichTextField()
+
     def __str__(self):
         """
         """

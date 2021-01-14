@@ -33,19 +33,7 @@
     margin: auto;
     width: auto;
 }
-.index .button {
-    background-color: var(--green);
-    border: solid 1px var(--Ygreen);
-    color: white;
-    font-family: 'Yusei Magic', sans-serif;
-    text-align: center;
-    display: table;
-    margin: auto;
-    font-size: 1vw;
-    cursor: pointer;
-    margin-top:4%;
-    margin-bottom:4%;
-}
+
 
 /* Galerie */
 .index .div-gallery{
@@ -60,10 +48,23 @@
     transition: .5s ease;
     backface-visibility: hidden;
 }
-#gallery ul{
+.index .button {
+    background-color: var(--green);
+    border: solid 1px var(--Ygreen);
+    color: white;
+    font-family: 'Yusei Magic', sans-serif;
+    text-align: center;
+    display: table;
+    margin: auto;
+    font-size: 1vw;
+    cursor: pointer;
+    margin-top:4%;
+    margin-bottom:4%;
+}
+.index #gallery ul{
     width:100%;
 }
-#gallery li{
+.index #gallery li{
     display: table;
     margin: auto;
     max-width: 40%;
@@ -71,7 +72,7 @@
 .index .hidden{
     display: none!important
 }
-.div-event{
+.index .div-event{
     transition: .5s ease;
     opacity: 0;
     position: absolute;
@@ -82,20 +83,20 @@
     border:solid 1px var(--Dgreen);
     
 }
-.div-img-menu{
+.index .div-img-menu{
     background-color: var(--Ygreen);
     color: var(--Dgreen);
     font-size: 0.75vw;
     padding: 16px 32px;
     white-space: nowrap;
 }
-.contain{
+.index .contain{
     position: relative;
 }
-.contain:hover .galerie {
+.index .contain:hover .galerie {
     opacity: 0.3;
 }
-.contain:hover .div-event {
+.index .contain:hover .div-event {
     opacity: 1;
 }
 
@@ -103,7 +104,10 @@
 .index .div-tips{
     margin-left:10%;
     margin-right:10%;
-    border:solid 1px var(--green)
+    border:solid 1px var(--green);
+    overflow-y: scroll;
+    scrollbar-color: var(--Ygreen) var(--green);
+    scrollbar-width: thin;
 }
 .index .div-tips ul{
     padding-left:0;
@@ -114,6 +118,9 @@
     margin-left: 0%;
     width: 100%;
     margin: auto;
+}
+.index .li-tips-frame{
+    width:33%;
 }
 
 /* Associations */
@@ -179,6 +186,13 @@
         width: 100%;
         margin: auto;
         font-size: 3vw;
+    }
+    .index #tips ul{
+        display:table;    
+    }
+    .index .li-tips-frame{
+        width:66%;
+        margin: auto;
     }
 /* Mobile Associations */
     #asso img{
