@@ -16,17 +16,22 @@ from django.db import models
 #     class Meta:
 #         managed = True
 #         db_table = 'event'
-
+# Due to the current sanitary situation, I have decided to postpone the addition of events for now.
 
 class Image(models.Model):
-    account = models.ForeignKey('login.UserData', on_delete=models.CASCADE)
-    url = models.URLField(max_length=500)
+    owner = models.ForeignKey('login.UserData', on_delete=models.CASCADE)
+    url = models.URLField(max_length=1000)
     title = models.CharField(max_length=50)
     description = models.CharField(max_length=1000)
     category = models.ManyToManyField('filters.Category')
-    posting_date = models.DateField()
+    posting_date = models.DateField('date published')
     department = models.ForeignKey('filters.Department', on_delete=models.CASCADE)
     approved = models.BooleanField(null=False , blank=True)
+
+    def __str__(self):
+        """
+        """
+        return f"{self.title}"
 
     class Meta:
         managed = True
@@ -39,6 +44,13 @@ class Tip(models.Model):
     category = models.ManyToManyField('filters.Category')
     owner = models.ForeignKey('login.UserData', on_delete=models.CASCADE)
     approved = models.BooleanField(null=False , blank=True)
+    
+    def __str__(self):
+        """
+        """
+        return f"{self.title}"
+
     class Meta:
         managed = True
         db_table = 'tip'
+

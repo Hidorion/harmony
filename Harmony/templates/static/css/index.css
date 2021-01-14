@@ -10,24 +10,22 @@
     margin : 0;
     padding : 0;
 }
-
 .index{
+    border:solid 2px var(--Dgreen);
     margin-left:10%;
     margin-right:10%;
     padding-top:150px; /*not hidden by desktop menu*/
     width: fit-content;
 }
-
 .index p {
     color:var(--green);
     text-align: center;
 }
-
 .index h1{
     text-align: center;
     color: var(--Dgreen);
+    font-size: 2.5em;
 }
-
 .index ul{
     padding-left: 0;
     list-style: none;
@@ -35,7 +33,6 @@
     margin: auto;
     width: auto;
 }
-
 .index .button {
     background-color: var(--green);
     border: solid 1px var(--Ygreen);
@@ -44,32 +41,36 @@
     text-align: center;
     display: table;
     margin: auto;
-    font-size: 1.5vw;
+    font-size: 1vw;
     cursor: pointer;
     margin-top:4%;
     margin-bottom:4%;
 }
 
 /* Galerie */
-
-.index .galerie{
-    display: table;
-    width: 100%;
-    margin: auto;
+.index .div-gallery{
+    display: table-cell;
+    height: 350px;
+    vertical-align: middle;
+}
+.index .img-gallery{
+    max-height: 100%;
+    max-width: 100%;
     opacity: 1;
     transition: .5s ease;
     backface-visibility: hidden;
 }
-
-#galerie ul{
+#gallery ul{
     width:100%;
 }
-
-#galerie li{
+#gallery li{
     display: table;
     margin: auto;
+    max-width: 40%;
 }
-
+.index .hidden{
+    display: none!important
+}
 .div-event{
     transition: .5s ease;
     opacity: 0;
@@ -84,47 +85,59 @@
 .div-img-menu{
     background-color: var(--Ygreen);
     color: var(--Dgreen);
-    font-size: 1vw;
+    font-size: 0.75vw;
     padding: 16px 32px;
+    white-space: nowrap;
 }
 .contain{
     position: relative;
-    border:solid 1px var(--Dgreen)
 }
 .contain:hover .galerie {
     opacity: 0.3;
 }
-
 .contain:hover .div-event {
     opacity: 1;
 }
 
 /* Tips */
-
 .index .div-tips{
     margin-left:10%;
     margin-right:10%;
     border:solid 1px var(--green)
 }
-
 .index .div-tips ul{
     padding-left:0;
     width: 100%;
     display: block;
 }
-
 .index .div-tips li{
     margin-left: 0%;
     width: 100%;
     margin: auto;
-    font-size: 1.5vw;
 }
 
 /* Associations */
-
 #asso ul{
-    width:100%
+    width:100%;
+    display: block;
+    margin-left: 1%;
 }
+#asso li{
+    color : var(--Dgreen);
+}
+#asso img{
+    width: 400px;
+    float: left;
+}
+#asso .div-asso{
+    margin-left:10%;
+    margin-right:10%;
+    display: flex;
+    margin-bottom: 4%;
+    border :solid 1px var(--Ygreen);
+    padding: 2px;
+}
+
 /* Responsive */
 @media only screen and (max-width: 768px) {
 /* Index Responsive page */
@@ -134,24 +147,31 @@
         margin-left: 0%;
         margin-right:0% ;
     }
-
-    .index .hidden{
-        display: none
+    .index .m-hidden{
+        display: none!important
     }
-
     .index .button{
         font-size:3vw;
     }
-
+    .index h1{
+        font-size:5vw;
+    }
     section{
         display: table;
         margin: auto;
         
     }
 /* Mobile Galerie */
-.div-img-menu{
-    font-size:5vw;
-}    
+    .div-img-menu{
+        font-size:5vw;
+    }
+    .index .div-gallery{
+        display: block;
+        height: auto;
+    }
+    #gallery li{
+        max-width: 1000%;
+    }
 /* Mobile Tips */
 
     .index .div-tips li{
@@ -161,5 +181,13 @@
         font-size: 3vw;
     }
 /* Mobile Associations */
-
+    #asso img{
+        width: 30%;
+        float: none;
+        margin: auto;
+        display: table;
+    }
+    #asso .div-asso{
+        display: block;
+    }
 }

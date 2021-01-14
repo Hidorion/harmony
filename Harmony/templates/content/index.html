@@ -6,25 +6,40 @@
 {% block link%}
 <link rel="stylesheet" type="text/css" href="{% static 'css\index.css' %}">
 {% endblock %}
-
+{% block script%}
+<script src="{% static 'js\carousel.js' %}"></script>
+{% endblock %}
 
 {% block content %}
 <body>
     <div class='index'>
-        <section id='galerie'>
+        <section id='gallery'>
             <h1>La Nature en image</h1>
+                {% if latest_images %}
+                    {% for image in latest_images %}
+                        <img class="img-src hidden" alt="{{ image.title }}" title="{{ image.title }}" src="{{ image.url }}" />
+                    {% endfor %}
+                {% else %}
+                    <p>No images are available.</p>
+                {% endif %}
                 <ul>
-                    <li class="contain">
-                        <img class="galerie hidden" alt="image left" title="exemple photo" src="{% static 'img\Harmony.png' %}" />
-                        <div class="div-event hidden"><div class="div-img-menu">Voir</div></div>
+                    <li class="contain m-hidden">
+                        <div class="div-gallery">
+                            <img class="img-gallery" alt="{{ image.title }}" title="{{ image.title }}" src="{{ image.url }}" />
+                            <div class="div-event"><div class="div-img-menu"><p>{{ image.title }}</p></div></div>
+                        </div>
                     </li>
                     <li class="contain">
-                        <img class="galerie mobile-show" alt="image middle" title="exemple photo" src="{% static 'img\Harmony.png' %}" />
-                        <div class="div-event"><div class="div-img-menu">Voir</div></div>
+                        <div class="div-gallery">
+                            <img class="img-gallery" alt="{{ image.title }}" title="{{ image.title }}" src="{{ image.url }}" />
+                            <div class="div-event"><div class="div-img-menu"><p>{{ image.title }}</p></div></div>
+                        </div>
                     </li>
-                    <li class="contain">
-                        <img class="galerie hidden" alt="image right" title="exemple photo" src="{% static 'img\Harmony.png' %}" />
-                        <div class="div-event hidden"><div class="div-img-menu">Voir</div></div>
+                    <li class="contain hidden">
+                        <div class="div-gallery">
+                            <img class="img-gallery" alt="{{ image.title }}" title="{{ image.title }}" src="{{ image.url }}" />
+                            <div class="div-event"><div class="div-img-menu">{{ image.title }}</div></div>
+                        </div>
                     </li>
                 </ul>
         </section>
@@ -32,38 +47,40 @@
             <h1>La Nature et ses secrets</h1>
                 <ul>
                     <li>
-                        <div class='div-tips hidden'>
+                        {% for tip in tips %}
+                        <div class='div-tips m-hidden'>
                             <ul>
-                                <li>Auteur : Harmony</li>
+                                <li>{{ tip.title }}</li>
                                 <li>Date : 01/2021</li>
-                                <li>Catégorie : Test</li>
-                                <li>Titre : Utiliser Harmony</li>
-                                <li>Harmony est simple d'utilisation. Il permet notamment de partager et d'échanger ses savoirs ainsi que son amour de la nature et sa volonté d'agir pour la présever</li>
-                                <li><button class="button">Voir plus</button></li>
+                                <li>Catégorie :  {% for cat in tip.category.all %}{{ cat }} {% endfor %}</li>
+                                <li>Par : {{ tip.owner }}</li>
+                                <li>{{ tip.description }}</li>
+                                <li><button class="button">Voir</button></li>
                             </ul>
                         </div>
+                        {% endfor %}
                     </li>
                     <li>
-                        <div class='div-tips mobile-show'>
+                        <div class='div-tips'>
                             <ul>
                                 <li>Auteur : Harmony</li>
                                 <li>Date : 01/2021</li>
                                 <li>Catégorie : Test2</li>
                                 <li>Titre : Utiliser Harmony</li>
                                 <li>Harmony est simple d'utilisation. Il permet notamment de partager et d'échanger ses savoirs ainsi que son amour de la nature et sa volonté d'agir pour la présever</li>
-                                <li><button class="button">Voir plus</button></li>
+                                <li><button class="button">Voir</button></li>
                             </ul>
                         </div>
                     </li>
                     <li>
-                        <div class='div-tips hidden'>
+                        <div class='div-tips m-hidden'>
                             <ul>
                                 <li>Auteur : Harmony</li>
                                 <li>Date : 01/2021</li>
                                 <li>Catégorie : Test3</li>
                                 <li>Titre : Utiliser Harmony</li>
                                 <li>Harmony est simple d'utilisation. Il permet notamment de partager et d'échanger ses savoirs ainsi que son amour de la nature et sa volonté d'agir pour la présever</li>
-                                <li><button class="button">Voir plus</button></li>
+                                <li><button class="button">Voir</button></li>
                             </ul>
                         </div>
                     </li>
@@ -71,45 +88,27 @@
         </section>
         <section id='asso'>
             <h1>La Nature et ses héros</h1>
-                <ul>
-                    <li>Asso 1</li>
-                    <li>Asso 2</li>
-                    <li>Asso 3</li>
-                </ul>
-        </section>
-        <section id='join-us'>
-            <p>Mélangeons tout ces éléments et nous serons en - Harmony - avec elle !</p>
-            <p>Toi aussi, participe à ta manière</p>
-        </section>
-        <section id='join-us'>
-            <p>Mélangeons tout ces éléments et nous serons en - Harmony - avec elle !</p>
-            <p>Toi aussi, participe à ta manière</p>
-        </section>
-        <section id='join-us'>
-            <p>Mélangeons tout ces éléments et nous serons en - Harmony - avec elle !</p>
-            <p>Toi aussi, participe à ta manière</p>
-        </section>
-        <section id='join-us'>
-            <p>Mélangeons tout ces éléments et nous serons en - Harmony - avec elle !</p>
-            <p>Toi aussi, participe à ta manière</p>
-        </section>
-        <section id='join-us'>
-            <p>Mélangeons tout ces éléments et nous serons en - Harmony - avec elle !</p>
-            <p>Toi aussi, participe à ta manière</p>
-        </section>
-        <section id='join-us'>
-            <p>Mélangeons tout ces éléments et nous serons en - Harmony - avec elle !</p>
-            <p>Toi aussi, participe à ta manière</p>
-        </section>
-        <section id='join-us'>
-            <p>Mélangeons tout ces éléments et nous serons en - Harmony - avec elle !</p>
-            <p>Toi aussi, participe à ta manière</p>
+            {% for asso in associations %}
+            <!-- {{ forloop.counter }}
+                {% if forloop.counter == 4 %}
+            {% else %} -->    
+            <div class='div-asso'>
+                    <img class="img-logo-asso" alt="logo association" title="exemple photo" src="{{ asso.logo }}" />
+                    <ul>
+                        <li>{{ asso.name }}</li>
+                        <li>Catégories : {% for cat in asso.category.all %}{{ cat }} {% endfor %}.</li>
+                        <li>{{ asso.department }}</li>
+                        <li>{{ asso.description }}</li>
+                        <li><button class="button">Découvrir</button></li>
+                    </ul>
+                </div>
+                <!-- {% endif %} -->
+                {% endfor %}
         </section>
         <section id='join-us'>
             <p>Mélangeons tout ces éléments et nous serons en - Harmony - avec elle !</p>
             <p>Toi aussi, participe à ta manière122</p>
         </section>
-        
     </div>
 </body>
 {% endblock %}
