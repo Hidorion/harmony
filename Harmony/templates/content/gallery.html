@@ -1,0 +1,16 @@
+{% extends "menu/menu_layout.html" %}
+
+{% block navigator_title %}Gallery{% endblock navigator_title %}
+{% load static %}
+
+{% block link%}
+<link rel="stylesheet" type="text/css" href="{% static 'css\gallery.css' %}">
+{% endblock %}
+
+{% block content %}
+<body>
+    <div class='gallery'>
+        <img class="" alt="image middle" title="exemple photo" src="{% static 'img\Harmony.png' %}" />
+    </div>
+</body>    
+{% endblock %}

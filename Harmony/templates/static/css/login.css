@@ -1,0 +1,22 @@
+.login body{
+    margin : 0;
+    padding : 0;
+}
+
+.login{
+    border:solid 2px var(--Dgreen);
+    margin-left:10%;
+    margin-right:10%;
+    padding-top:150px; /*not hidden by desktop menu*/
+}
+
+
+@media only screen and (max-width: 768px) {
+    /* Index Responsive page */
+        .login{
+            padding-top:0px;
+            padding-bottom: 80px; /*not hidden by mobile menu*/
+            margin-left: 0%;
+            margin-right:0% ;
+        }
+}

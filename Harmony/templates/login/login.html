@@ -1,0 +1,17 @@
+{% extends "menu/menu_layout.html" %}
+
+{% block navigator_title %}Log in{% endblock navigator_title %}
+{% load static %}
+
+{% block link%}
+<link rel="stylesheet" type="text/css" href="{% static 'css\login.css' %}">
+{% endblock %}
+
+{% block content %}
+<body>
+    <div class='login'>
+        <h1>LOG IN</h1>
+        <h2>SIGN UP</h2>
+    </div>
+</body>    
+{% endblock %}
