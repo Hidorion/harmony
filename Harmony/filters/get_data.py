@@ -6,18 +6,18 @@
 
 # def get_data(DB):
 #     source = psycopg2.connect(DB)
-#     cur = source.cursor()
+#     cursor = source.cursor()
 #     url = 'https://geo.api.gouv.fr/regions' 
-#     r = requests.get(url)
-#     regions = r.json()
+#     req = requests.get(url)
+#     regions = req.json()
 #     for region in regions:
 #         sql = """INSERT INTO Region (region_name, region_code, country_id) VALUES (%s,%s,%s)"""
 #         value = (region['nom'], region['code'], 2)
-#         cur.execute(sql,value)
+#         cursor.execute(sql,value)
 #         source.commit()
 #         count = cur.rowcount
 #         print (count)
-#     cur.close()
+#     cursor.close()
 #     source.close()
 #     print("La connexion PostgreSQL est fermée")
 

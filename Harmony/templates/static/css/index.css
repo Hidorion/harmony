@@ -1,5 +1,6 @@
 /* INDEX PAGE */
 
+/* Variables */
 :root{
     --green: #426D49;
     --Dgreen : #25522b;
@@ -34,8 +35,7 @@
     width: auto;
 }
 
-
-/* Galerie */
+/* GALLERY */
 .index .div-gallery{
     display: table-cell;
     height: 350px;
@@ -100,7 +100,10 @@
     opacity: 1;
 }
 
-/* Tips */
+/* TIPS */
+.index #tips ul{
+    width:100%;
+}
 .index .div-tips{
     margin-left:10%;
     margin-right:10%;
@@ -121,9 +124,10 @@
 }
 .index .li-tips-frame{
     width:33%;
+    margin:auto;
 }
 
-/* Associations */
+/* ASSOCIATION */
 #asso ul{
     width:100%;
     display: block;
@@ -145,9 +149,9 @@
     padding: 2px;
 }
 
-/* Responsive */
+/* RESPONSIVE */
 @media only screen and (max-width: 768px) {
-/* Index Responsive page */
+/* R INDEX PAGE */
     .index{
         padding-top:0px;
         padding-bottom: 80px; /*not hidden by mobile menu*/
@@ -168,7 +172,7 @@
         margin: auto;
         
     }
-/* Mobile Galerie */
+/* R GALLERY */
     .div-img-menu{
         font-size:5vw;
     }
@@ -177,10 +181,13 @@
         height: auto;
     }
     #gallery li{
-        max-width: 1000%;
+        max-width: 100%;
     }
-/* Mobile Tips */
-
+    .index #gallery li{
+        display: block;
+        max-width: 100%;
+    }
+/* R TIPS */
     .index .div-tips li{
         margin-left: 0%;
         width: 100%;
@@ -194,7 +201,7 @@
         width:66%;
         margin: auto;
     }
-/* Mobile Associations */
+/* R ASSOCIATIONS */
     #asso img{
         width: 30%;
         float: none;

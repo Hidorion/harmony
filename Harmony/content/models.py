@@ -1,5 +1,6 @@
 from django.db import models
 from ckeditor.fields import RichTextField
+from django import forms
 # from filters.models import Category, Department
 #from Harmony.Models.account import Account
 
@@ -41,7 +42,7 @@ class Image(models.Model):
 
 class Tip(models.Model):
     title = models.CharField(max_length=50)
-    description = models.CharField(max_length=1000)
+    description = models.CharField(max_length=250)
     category = models.ManyToManyField('filters.Category')
     owner = models.ForeignKey('login.UserData', on_delete=models.CASCADE)
     approved = models.BooleanField(null=False , blank=True)
