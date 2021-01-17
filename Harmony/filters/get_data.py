@@ -1,6 +1,6 @@
 
-# import requests
-# import psycopg2
+import requests
+import psycopg2
 
     
 
@@ -10,6 +10,13 @@
 #     url = 'https://geo.api.gouv.fr/regions' 
 #     req = requests.get(url)
 #     regions = req.json()
+def get_data(DB):
+    source = psycopg2.connect(DB)
+    cur = source.cursor()
+#     url = 'https://geo.api.gouv.fr/regions'
+    url = 'https://geo.api.gouv.fr/departments'
+#     r = requests.get(url)
+#     regions = r.json()
 #     for region in regions:
 #         sql = """INSERT INTO Region (region_name, region_code, country_id) VALUES (%s,%s,%s)"""
 #         value = (region['nom'], region['code'], 2)
@@ -21,7 +28,7 @@
 #     source.close()
 #     print("La connexion PostgreSQL est fermée")
 
-# DB = ("dbname= postgres user= postgres password= AdminP3Harm host= ale-pyt-2006-pjt-p3-hamony-db.pythonrover.wilders.dev port = 15004")
+DB = ("dbname= postgres user= postgres password= AdminP3Harm host= ale-pyt-2006-pjt-p3-hamony-db.pythonrover.wilders.dev port = 15004")
 
 # get_data(DB)
 

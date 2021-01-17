@@ -1,7 +1,6 @@
-document.addEventListener("DOMContentLoaded", (event) => {
-    if (document.getElementsByClassName("index") !== null || document.getElementById("gallery") !== null) {
+$(document).ready(function(){
+    if (document.getElementsByClassName("index") !== null) {
         let imgList = document.getElementsByClassName("img-src");
-        // let idList = document.getElementsByClassName("get-id");
         let currentPosition = 0;
         /**
          * Change the images from the right to the left side.
@@ -14,7 +13,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
                 updateImage(i, pos);
             }
         }
-
         /**
          * Update the images with changing the src, alt and title of the img tag.
          * @param i is the position of the image to modify.
@@ -24,10 +22,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
             document.getElementsByClassName("img-gallery")[i].src = imgList[position].src;
             document.getElementsByClassName("img-gallery")[i].alt = imgList[position].alt;
             document.getElementsByClassName("img-gallery")[i].title = imgList[position].title;
-            // if (document.getElementById("references_page") !== null ){
             document.getElementsByClassName("div-img-menu")[i].textContent = imgList[position].title;
-            //     document.getElementsByClassName("span-name")[i].textContent = imgList[position].alt;
-            // }    
+            document.getElementsByClassName("a-title")[i].href = "gallery#" + imgList[position].id;    
         }
 
         changeImages();

@@ -9,14 +9,16 @@ from login.models import Association
 from filters.models import Category
 
 def index(request):
-    latest_images = Image.objects.filter(approved=True)
+    latest_images = Image.objects.filter(approved=True)[:5]
     associations = Association.objects.filter(approved=True)
     tips = Tip.objects.filter(approved=True)
     context = {'latest_images': latest_images , 'associations': associations , 'tips' : tips}
     return render(request, 'content/index.html', context)
 
 def gallery(request):
-    return render(request, 'content/gallery.html')
+    gallery = Image.objects.filter(approved=True)
+    context = {'gallery': gallery}
+    return render(request, 'content/gallery.html', context)
 
 
 # class IndexView(generic.ListView):

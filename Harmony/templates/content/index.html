@@ -13,11 +13,12 @@
 {% block content %}
 <body>
     <div class='index'>
-        <section id='gallery'>
+        <section id='index-gallery'>
             <h1>La Nature en image</h1>
                 {% if latest_images %}
                     {% for image in latest_images %}
-                        <img class="img-src hidden" alt="{{ image.title }}" title="{{ image.title }}" src="{{ image.url }}" />
+                        <img class="img-src hidden" alt="{{ image.title }}" title="{{ image.title }}" src="{{ image.url }}" id="{{ image.id }}"/>
+                        <!-- <div class="div-event hidden"><a class="a-title" target='_blank' ><div class="div-img-menu hidden">{{ image.title }}</div></a></div> -->
                     {% endfor %}
                 {% else %}
                     <p>No images are available.</p>
@@ -26,24 +27,25 @@
                     <li class="contain m-hidden">
                         <div class="div-gallery">
                             <img class="img-gallery" alt="{{ image.title }}" title="{{ image.title }}" src="{{ image.url }}" />
-                            <div class="div-event"><div class="div-img-menu"><p>{{ image.title }}</p></div></div>
+                            <div class="div-event"><a class="a-title" target='_blank' ><div class="div-img-menu">{{ image.title }}</div></a></div>
+                            
                         </div>
                     </li>
                     <li class="contain">
                         <div class="div-gallery">
                             <img class="img-gallery" alt="{{ image.title }}" title="{{ image.title }}" src="{{ image.url }}" />
-                            <div class="div-event"><div class="div-img-menu"><p>{{ image.title }}</p></div></div>
+                            <div class="div-event"><a class="a-title" target='_blank' ><div class="div-img-menu">{{ image.title }}</div></a></div>
                         </div>
                     </li>
                     <li class="contain hidden">
                         <div class="div-gallery">
                             <img class="img-gallery" alt="{{ image.title }}" title="{{ image.title }}" src="{{ image.url }}" />
-                            <div class="div-event"><div class="div-img-menu">{{ image.title }}</div></div>
+                            <div class="div-event"><a class="a-title" target='_blank' ><div class="div-img-menu">{{ image.title }}</div></a></div>
                         </div>
                     </li>
                 </ul>
         </section>
-        <section id='tips'>
+        <section id='index-tips'>
             <h1>La Nature et ses secrets</h1>
                 <ul>
                     {% for tip in tips %}
@@ -78,7 +80,7 @@
                     {% endfor %}
                 </ul>
         </section>
-        <section id='asso'>
+        <section id='index-asso'>
             <h1>La Nature et ses héros</h1>
             {% for asso in associations %}
                 {% if forloop.counter == 4 %}
@@ -96,33 +98,10 @@
                 {% endif %}
                 {% endfor %}
         </section>
-        <section id='join-us'>
+        <section id='index-join-us'>
             <p>Mélangeons tout ces éléments et nous serons en - Harmony - avec elle !</p>
             <p>Toi aussi, participe à ta manière122</p>
         </section>
     </div>
 </body>
 {% endblock %}
-
-
-
-
-<!-- {% if latest_plants %}
-        <ul class="ElementList">
-            {% for plant in latest_plants %}
-                <li>
-                    <a href="{% url 'knowledge:detail' plant.id %}">
-                        <h2>{{ plant.name }}</h2>
-                        <img src="{{ plant.image.url }}" alt="{{ plant.name }}" title="{{ plant.name }}">
-                    </a>
-                    <br>
-                    {% if plant.wiki %}
-                        <a class="wikiLink" href="{{ plant.wiki }}" target="_blank">Pour tout savoir...</a>
-                        <br>
-                    {% endif %}
-                </li>
-            {% endfor %}
-        </ul>
-    {% else %}
-        <p>Pas de plantes en stock :-(</p>
-    {% endif %} -->

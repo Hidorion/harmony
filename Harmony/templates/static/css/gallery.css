@@ -1,15 +1,28 @@
-.gallery body{
+#gallery body{
     margin : 0;
     padding : 0;
 }
 
-.gallery{
+#gallery{
     border:solid 2px var(--Dgreen);
     margin-left:10%;
     margin-right:10%;
     padding-top:150px; /*not hidden by desktop menu*/
 }
 
+#gallery ul{
+    list-style: none;
+    color : var(--green);
+}
+.div-img-container{
+    display: table;
+    margin: auto;
+    border: solid 2px var(--Dgreen);
+    margin-bottom: 4%;
+}
+.div-desc{
+    display: none;
+}
 
 @media only screen and (max-width: 768px) {
     /* Index Responsive page */

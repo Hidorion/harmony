@@ -32,7 +32,7 @@
     list-style: none;
     display: inline-flex;
     margin: auto;
-    width: auto;
+    width: 100%;
 }
 
 /* GALLERY */
@@ -61,10 +61,10 @@
     margin-top:4%;
     margin-bottom:4%;
 }
-.index #gallery ul{
+.index #index-gallery ul{
     width:100%;
 }
-.index #gallery li{
+.index #index-gallery li{
     display: table;
     margin: auto;
     max-width: 40%;
@@ -127,20 +127,20 @@
     margin:auto;
 }
 
-/* ASSOCIATION */
-#asso ul{
+/* Associations */
+#index-asso ul{
     width:100%;
     display: block;
     margin-left: 1%;
 }
-#asso li{
+#index-asso li{
     color : var(--Dgreen);
 }
-#asso img{
+#index-asso img{
     width: 400px;
     float: left;
 }
-#asso .div-asso{
+#index-asso .div-asso{
     margin-left:10%;
     margin-right:10%;
     display: flex;
@@ -180,7 +180,7 @@
         display: block;
         height: auto;
     }
-    #gallery li{
+    #index-gallery li{
         max-width: 100%;
     }
     .index #gallery li{
@@ -194,21 +194,21 @@
         margin: auto;
         font-size: 3vw;
     }
-    .index #tips ul{
+    .index #index-tips ul{
         display:table;    
     }
     .index .li-tips-frame{
         width:66%;
         margin: auto;
     }
-/* R ASSOCIATIONS */
-    #asso img{
+/* Mobile Associations */
+    #index-asso img{
         width: 30%;
         float: none;
         margin: auto;
         display: table;
     }
-    #asso .div-asso{
+    #index-asso .div-asso{
         display: block;
     }
 }

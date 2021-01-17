@@ -6,11 +6,28 @@
 {% block link%}
 <link rel="stylesheet" type="text/css" href="{% static 'css\gallery.css' %}">
 {% endblock %}
+{% block script %}
+<script src="{% static 'js\gallery.js' %}"></script>
+{% endblock %}
 
 {% block content %}
 <body>
-    <div class='gallery'>
-        <img class="" alt="image middle" title="exemple photo" src="{% static 'img\Harmony.png' %}" />
+    <div id='gallery'>
+    {% if gallery %}
+    {% for image in gallery %}
+        <div class="div-img-container">
+            <img id='{{ image.id }}' class="img-src" alt="{{ image.title }}" title="{{ image.title }}" src="{{ image.url }}" />
+            <div class="div-desc">
+                <ul>
+                    <li>{{ image.title }} par {{ image.owner }}</li>
+                    <li>{{ image.posting_date }} {{ image.department }}</li>
+                    <li>{{ image.description }}</li>
+                </ul>
+            </div>
+        </div>
+        {% endfor %}
+        {% endif %}
+        
     </div>
 </body>    
 {% endblock %}
