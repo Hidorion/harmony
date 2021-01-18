@@ -39,7 +39,7 @@ class Country(models.Model):
 
 class Region(models.Model):
     region_name = models.CharField(max_length=50)
-    region_code = models.IntegerField()
+    region_code = models.IntegerField(primary_key=True)
     country = models.ForeignKey(Country, on_delete=models.CASCADE)
     
     def __str__(self):
@@ -57,13 +57,17 @@ class Region(models.Model):
 
 class Department(models.Model):
     department_name = models.CharField(max_length=50)
+    department_code = models.CharField(default="0" , max_length=6)
     region = models.ForeignKey(Region, on_delete=models.CASCADE)
+    
     def __str__(self):
         """
         """
         return f"{self.department_name}"
+    
     class Meta:
         managed = True
+        ordering = ["department_code"]
         db_table = 'department'
         verbose_name = "Departement"
         verbose_name_plural = "Departements"

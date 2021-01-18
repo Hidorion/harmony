@@ -1,7 +1,3 @@
 {
-<<<<<<< HEAD
-    "python.pythonPath": "C:\\Users\\PYTHON\\AppData\\Local\\Programs\\Python\\Python38\\python.exe"
-=======
-    "python.pythonPath": "c:\\Users\\Alex\\AppData\\Local\\Programs\\Python\\Python39\\python.exe"
->>>>>>> a31afe5 ([IMP] Index and gallery links)
+    "python.pythonPath": "env\\Scripts\\python.exe"
 }

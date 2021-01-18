@@ -35,6 +35,11 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='region',
             name='region_code',
-            field=models.IntegerField(),
+            field=models.IntegerField(primary_key=True, serialize=False),
+        ),
+        migrations.AddField(
+            model_name='department',
+            name='department_code',
+            field=models.IntegerField(default='0'),
         ),
     ]

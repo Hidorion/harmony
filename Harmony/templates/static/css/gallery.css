@@ -2,14 +2,12 @@
     margin : 0;
     padding : 0;
 }
-
 #gallery{
     border:solid 2px var(--Dgreen);
     margin-left:10%;
     margin-right:10%;
     padding-top:150px; /*not hidden by desktop menu*/
 }
-
 #gallery ul{
     list-style: none;
     color : var(--green);
@@ -17,19 +15,51 @@
 .div-img-container{
     display: table;
     margin: auto;
-    border: solid 2px var(--Dgreen);
-    margin-bottom: 4%;
+    margin-top: 4%;
 }
 .div-desc{
     display: none;
 }
+.div-desc ul {
+    display: table;
+    margin: auto;
+    padding-left: 0px;
+}
+#gallery img{
+    border: solid 2px var(--Dgreen);
+}
 
 @media only screen and (max-width: 768px) {
     /* Index Responsive page */
-        .gallery{
-            padding-top:0px;
-            padding-bottom: 80px; /*not hidden by mobile menu*/
-            margin-left: 0%;
-            margin-right:0% ;
-        }
+    #gallery{
+        padding-top: 4%;
+        padding-bottom: 80px; /*not hidden by mobile menu*/
+        margin-left: 0%;
+        margin-right:0%;
+        border:none;
+    }
+    #gallery img{
+        border: none;
+        border-top : solid 2px var(--Dgreen); 
+        border-bottom: solid 2px var(--Dgreen);
+    }
+    .div-img-container{
+        margin-top: 0%;
+        margin-bottom:4%;
+    }
+    
+    .img-src{
+        width : 100%;
+        height :auto;
+    }
+
+}
+@media only screen and (max-width: 400px) {
+    #gallery{
+        padding-bottom: 25px; /*not hidden by mobile menu*/
+        width: 100%;
+    }
+    .div-desc ul {
+        margin: 5%;
+    }
 }
