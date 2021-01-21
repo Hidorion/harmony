@@ -1,0 +1,37 @@
+#add-content body{
+    margin : 0;
+    padding : 0;
+}
+#add-content{
+    border:solid 2px var(--Dgreen);
+    margin-left:10%;
+    margin-right:10%;
+    padding-top:150px; /*not hidden by desktop menu*/
+}
+
+#add-content h1 {
+    text-align: center;
+}
+
+#add-content form {
+    display: none;
+    margin:auto;
+    margin-bottom: 4%;
+}
+#add-content input {
+    display: block;
+}
+#add-content p {
+    color:black;
+    width: min-content;
+}
+
+#add-content button{
+    margin: auto;
+    display: block;
+}
+
+#add-content .select{
+    display: table;
+    margin: auto;
+}

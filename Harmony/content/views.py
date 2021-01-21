@@ -4,8 +4,10 @@ from django.urls import reverse
 from django.views import generic
 from django.template import loader
 from django.contrib.auth.decorators import login_required
-from .models import Image,Tip
-from login.models import Association
+from django.conf import settings
+from django.shortcuts import redirect
+from .models import Image,Tip,ImageForm,TipForm
+from login.models import Association, UserData
 from filters.models import Category
 
 def index(request):
@@ -20,9 +22,21 @@ def gallery(request):
     context = {'gallery': gallery}
     return render(request, 'content/gallery.html', context)
 
-
-# class IndexView(generic.ListView):
-#     """
-#     """
-
-#     template_name = "/Harmony/Harmony/templates/content/index.html"
+def adding(request):
+    if not request.user.is_authenticated:
+        return redirect('%s?next=%s' % (settings.LOGIN_URL, request.path))
+    else:
+        formToAdd = ImageForm()
+        formToAlsoAdd = TipForm()
+        if request.method == 'POST' :
+            formToAdd = ImageForm(request.POST)
+            formToAlsoAdd = TipForm(request.POST)
+            if formToAdd.is_valid() :
+                formToAdd.save()
+            elif formToAlsoAdd.is_valid() :
+                formToAdd.save()
+        else :
+            formToAdd = ImageForm(initial={'owner': request.user.id})
+            formToAlsoAdd = TipForm(initial={'owner' : request.user.id})
+        context = {'formToAdd' : formToAdd , 'formToAlsoAdd' : formToAlsoAdd }
+    return render(request, 'content/add_content.html' , context)

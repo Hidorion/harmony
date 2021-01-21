@@ -38,4 +38,4 @@ class Association(models.Model):
         """
         """
 
-        return f"{self.name}"
+        return f"{self.name},{self.approved}"

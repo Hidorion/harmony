@@ -7,6 +7,7 @@
 <link rel="stylesheet" type="text/css" href="{% static 'css\gallery.css' %}">
 {% endblock %}
 {% block script %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="{% static 'js\gallery.js' %}"></script>
 {% endblock %}
 
@@ -19,8 +20,8 @@
             <img id='{{ image.id }}' class="img-src" alt="{{ image.title }}" title="{{ image.title }}" src="{{ image.url }}" />
             <div class="div-desc">
                 <ul>
-                    <li>{{ image.title }} par {{ image.owner }}</li>
-                    <li>{{ image.posting_date }} {{ image.department }}</li>
+                    <li>"{{ image.title }}" par {{ image.owner }}</li>
+                    <li>{{ image.posting_date|date:"d/m/y" }} {{ image.department }}</li>
                     <li>{{ image.description }}</li>
                 </ul>
             </div>
