@@ -1,17 +1,11 @@
 $(document).ready(function(){
-    if (document.getElementById("add-content") !== null) {
-        let checked = document.getElementById("selected");
-        if(checked.value = "Astuce"){         
-            document.getElementById("tip").setAttribute("style","display:table")
-            document.getElementById("pic").setAttribute("style","display:none");
+    $('select').on('change', function() {
+        $('#tip').toggle(false);
+        $('#pic').toggle(false);
+        if (this.value == "Astuce") {
+            $('#tip').toggle(true)
+        } else {
+            $('#pic').toggle(true)
         }
-        else if(checked.value = "Image"){
-            document.getElementById("tip").setAttribute("style","display:none")
-            document.getElementById("pic").setAttribute("style","display:table");
-        }
-        else{ 
-            document.getElementById("tip").setAttribute("style","display:none")
-            document.getElementById("pic").setAttribute("style","display:none");
-        }
-    }
+    });
 });

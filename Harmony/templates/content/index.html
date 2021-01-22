@@ -6,8 +6,12 @@
 {% block link%}
 <link rel="stylesheet" type="text/css" href="{% static 'css\index.css' %}">
 {% endblock %}
-{% block script%}
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+{% block script %}
+<script
+	src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+	integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs="
+    crossorigin="anonymous">
+</script>
 <script src="{% static 'js\carousel.js' %}"></script>
 {% endblock %}
 

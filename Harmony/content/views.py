@@ -40,3 +40,6 @@ def adding(request):
             formToAlsoAdd = TipForm(initial={'owner' : request.user.id})
         context = {'formToAdd' : formToAdd , 'formToAlsoAdd' : formToAlsoAdd }
     return render(request, 'content/add_content.html' , context)
+
+def legal(request):
+    return render(request, 'menu/legal.html')

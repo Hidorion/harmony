@@ -15,7 +15,7 @@
 
 #add-content form {
     display: none;
-    margin:auto;
+    margin: auto;
     margin-bottom: 4%;
 }
 #add-content input {
@@ -31,7 +31,16 @@
     display: block;
 }
 
-#add-content .select{
+#add-content .div-select, .div-form{
     display: table;
     margin: auto;
 }
+@media only screen and (max-width: 768px) {
+    /* Index Responsive page */
+    #add-content{
+        padding-top: 4%;
+        padding-bottom: 80px; /*not hidden by mobile menu*/
+        margin-left: 0%;
+        margin-right:0%;
+        border:none;
+    }

@@ -2,6 +2,7 @@
 <html lang="fr">
 
     <head>
+        <!-- <meta HTTP-EQUIV="CACHE-CONTROL" CONTENT="max-age=31536000"> -->
         <meta charset="utf-8">
         <meta name="description" content="menu of the Harmony website">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,9 +10,8 @@
         <link rel="shortcut icon" type="image/ico" href="\templates\favicon.ico"/>
         {% load static %}
         <link rel="stylesheet" type="text/css" href="{% static 'css\menu.css' %}">
-        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link rel="preload" rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap" rel="stylesheet">
-        
         {% block link%}{% endblock %}{% block script%}{% endblock %}
     </head>
 

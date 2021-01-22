@@ -6,9 +6,12 @@
 {% block link%}
 <link rel="stylesheet" type="text/css" href="{% static 'css\add_content.css' %}">
 {% endblock %}
-
 {% block script %}
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script
+	src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+	integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs="
+    crossorigin="anonymous">
+</script>
 <script src="{% static 'js\add_content.js' %}"></script>
 {% endblock %}
 
@@ -16,23 +19,26 @@
 <body>
     <div id='add-content'>
         <h1>TEST</h1>
-        <div class="select">Choisir le type de contenu à ajouter 
+        <div class="div-select">Choisir le type de contenu à ajouter 
             <select id='selected'>
                 <option></option>
-                <option>Astuce</option> 
-                <option>Image</option>
+                <option value="Astuce">Astuce</option> 
+                <option value="Image">Image</option>
             </select>
         </div>
-        <form action="" method="POST" id='pic'>
-            {% csrf_token %}
-            {{ formToAdd.as_p }}
-            <button type='submit'>Push</button>
-        </form>
-        <form action="" method="POST" id='tip'>
-            {% csrf_token %}
-            {{ formToAlsoAdd.as_p }}
-            <button type='submit'>Push</button>
-        </form>
+        <div class="div-form">
+            <form action="" method="POST" id='pic'>
+                {% csrf_token %}
+                {{ formToAdd.as_p }}
+                <button type='submit'>Push</button>
+            </form>
+            <form action="" method="POST" id='tip'>
+                {% csrf_token %}
+                {{ formToAlsoAdd.media}}
+                {{ formToAlsoAdd.as_p }}
+                <button type='submit'>Push</button>
+            </form>
+        </div>
     </div>
 </body>
 {% endblock %}

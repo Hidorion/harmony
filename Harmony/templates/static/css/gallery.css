@@ -8,25 +8,33 @@
     margin-right:10%;
     padding-top:150px; /*not hidden by desktop menu*/
 }
+#gallery h1{
+    text-align: center;
+    color: var(--Ygreen);
+    background: var(--green);
+}
 #gallery ul{
     list-style: none;
     color : var(--green);
 }
-.div-img-container{
+#gallery .div-img-container{
     display: table;
     margin: auto;
     margin-top: 4%;
 }
-.div-desc{
+#gallery .div-desc{
     display: none;
 }
-.div-desc ul {
+#gallery .div-desc ul {
     display: table;
     margin: auto;
     padding-left: 0px;
 }
 #gallery img{
     border: solid 2px var(--Dgreen);
+    max-width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
 }
 
 @media only screen and (max-width: 768px) {
@@ -43,7 +51,7 @@
         border-top : solid 2px var(--Dgreen); 
         border-bottom: solid 2px var(--Dgreen);
     }
-    .div-img-container{
+    #gallery .div-img-container{
         margin-top: 0%;
         margin-bottom:4%;
     }

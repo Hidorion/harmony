@@ -4,8 +4,6 @@ from django import forms
 from django.forms import ModelForm
 from datetime import *
 from login.models import UserData
-#from Harmony.Models.account import Account
-
 
 # class Event(models.Model):
 #     title = models.CharField(max_length=50)
@@ -66,11 +64,14 @@ class Tip(models.Model):
 class ImageForm(ModelForm):
         class Meta:
             model = Image
-            fields = ['owner','title', 'url', 'department', 'category']
+            fields = ['owner','title',
+                      'description','url',
+                      'department','category']
 
 class TipForm(ModelForm):
         class Meta:
             model = Tip
-            fields = ['owner','title', 'description', 'content', 'category']
+            fields = ['owner','title',
+                      'description','content','category']
 
 
