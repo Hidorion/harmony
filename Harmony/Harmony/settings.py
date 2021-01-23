@@ -12,6 +12,10 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 from pathlib import Path
 import os
+import json
+from django.core.exceptions import ImproperlyConfigured
+
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -28,7 +32,6 @@ SECRET_KEY = os.environ.get("SECRET_KEY","mySecretKey")
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
 
 # Application definition
 
@@ -75,16 +78,22 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'Harmony.wsgi.application'
 
+with open(os.path.join(BASE_DIR, 'secrets.json')) as secrets_file:
+    secrets = json.load(secrets_file)
 
-# Database
-# https://docs.djangoproject.com/en/3.1/ref/settings/#databases
+def get_secret(setting, secrets=secrets):
+    """Get secret setting or fail with ImproperlyConfigured"""
+    try:
+        return secrets[setting]
+    except KeyError:
+        raise ImproperlyConfigured("Set the {} setting".format(setting))
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'postgres',
         'USER': 'postgres',
-        'PASSWORD': 'AdminP3Harm',
+        'PASSWORD': get_secret('DB_PASSWORD'),
         'HOST': 'ale-pyt-2006-pjt-p3-hamony-db.pythonrover.wilders.dev',
         'PORT': '15004',
     }

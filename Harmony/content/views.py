@@ -9,6 +9,7 @@ from django.shortcuts import redirect
 from .models import Image,Tip,ImageForm,TipForm
 from login.models import Association, UserData
 from filters.models import Category
+from django.core.paginator import Paginator
 
 def index(request):
     latest_images = Image.objects.filter(approved=True)[:5]
@@ -19,7 +20,10 @@ def index(request):
 
 def gallery(request):
     gallery = Image.objects.filter(approved=True)
-    context = {'gallery': gallery}
+    paginator = Paginator(gallery, 5) # Show 5 pics per page.
+    page_number = request.GET.get('page') # Get the page sorted
+    page_obj = paginator.get_page(page_number) # Get the number of pages
+    context = {'gallery': gallery , 'page_obj': page_obj}
     return render(request, 'content/gallery.html', context)
 
 def adding(request):

@@ -57,6 +57,10 @@ body{
     display: none;
     z-index: 10;
 }
+.menu .div-footer{
+    margin: auto;
+    text-align: center;
+}
 
 @media only screen and (max-width: 768px) {
     .menu nav.desktop{

@@ -19,7 +19,7 @@
     </header>
     <body>
         {% if gallery %}
-        {% for image in gallery %}
+        {% for image in page_obj %}
             <div class="div-img-container">
                 <img id='{{ image.id }}' class="img-src" alt="{{ image.title }}" title="{{ image.title }}" src="{{ image.url }}" loading="lazy"/>
                 <div class="div-desc">
@@ -32,6 +32,23 @@
             </div>
         {% endfor %}
         {% endif %}
+        <div class="div-pagination">
+            <span class="step-links">
+                {% if page_obj.has_previous %}
+                    <a href="?page=1">&laquo;</a>
+                    <a href="?page={{ page_obj.previous_page_number }}"><</a>
+                {% endif %}
+    
+                <span class="current">
+                    Page {{ page_obj.number }} sur {{ page_obj.paginator.num_pages }}.
+                </span>
+    
+                {% if page_obj.has_next %}
+                    <a href="?page={{ page_obj.next_page_number }}">></a>
+                    <a href="?page={{ page_obj.paginator.num_pages }}">&raquo;</a>
+                {% endif %}
+            </span>
+        </div>
     </body>
 </section>
 </html>    

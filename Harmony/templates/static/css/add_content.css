@@ -35,6 +35,13 @@
     display: table;
     margin: auto;
 }
+#menu-img{
+    color: var(--Ygreen);
+}
+.div-footer{
+    margin: auto;
+    text-align: center;
+}
 @media only screen and (max-width: 768px) {
     /* Index Responsive page */
     #add-content{
@@ -44,3 +51,4 @@
         margin-right:0%;
         border:none;
     }
+}

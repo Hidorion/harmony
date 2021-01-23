@@ -1,6 +1,7 @@
 $(document).ready(function(){
     if (document.getElementsByClassName("index") !== null) {
         let imgList = document.getElementsByClassName("img-src");
+        let imgToChange = document.getElementsByClassName("img-gallery");
         let currentPosition = 0;
         /**
          * Change the images from the right to the left side.
@@ -19,9 +20,9 @@ $(document).ready(function(){
          * @param position is the position where the new values are stored.
          */
         function updateImage(i, position) {
-            document.getElementsByClassName("img-gallery")[i].src = imgList[position].src;
-            document.getElementsByClassName("img-gallery")[i].alt = imgList[position].alt;
-            document.getElementsByClassName("img-gallery")[i].title = imgList[position].title;
+            imgToChange[i].src = imgList[position].src;
+            imgToChange[i].alt = imgList[position].alt;
+            imgToChange[i].title = imgList[position].title;
             document.getElementsByClassName("div-img-menu")[i].textContent = imgList[position].title;
             document.getElementsByClassName("a-title")[i].href = "gallery#" + imgList[position].id;    
         }

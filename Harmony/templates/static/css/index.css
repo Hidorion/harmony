@@ -148,6 +148,13 @@
     border :solid 1px var(--Ygreen);
     padding: 2px;
 }
+.div-footer{
+    margin: auto;
+    text-align: center;
+}
+#menu-home{
+    color: var(--Ygreen);
+}
 
 /* RESPONSIVE */
 @media only screen and (max-width: 768px) {

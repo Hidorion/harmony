@@ -20,38 +20,48 @@
             <nav class="desktop">
                 <ul>
                     <li>
-                        <a href="/content/">Accueil</a>
+                        <a id='menu-home' href="/content/">Accueil</a>
                     </li>
                     <li>
-                        <a href="/gallery">Galerie</a>
+                        <a id='menu-img' href="/gallery">Galerie</a>
                     </li>
                     <li>
-                        <a href="/content/tip">Astuces</a>
+                        <a id='menu-tip' href="/tip">Astuces</a>
                     </li>
                     <li>
-                        <a href="/association">Association</a>
+                        <a id='menu-asso' href="/association">Association</a>
                     </li>
                     <li>
-                        <a href="/login"><img class="logo" alt="se connecter" title="Logo pour login" src="{% static 'img\picto_profil.png' %}" /></a>
+                        <a id='menu-log' href="/login"><img class="logo" alt="se connecter" title="Logo pour login" src="{% static 'img\picto_profil.png' %}" /></a>
                     </li>
                 </ul>
             </nav>
             <nav class='mobile'>
                 <ul>
                     <li>
-                        <a href="/content/"><img class="logo" alt="accueil" title="Logo pour accueil" src="{% static 'img\picto_home.png' %}" /></a>
+                        <a href="/content/">
+                            <img class="logo" alt="accueil" title="Logo pour accueil" src="{% static 'img\picto_home.png' %}" />
+                        </a>
                     </li>
                     <li>
-                        <a href="/content/image"><img class="logo" alt="Galerie" title="Logo pour galerie" src="{% static 'img\picto_photo.png' %}" /></a>
+                        <a href="/gallery">
+                            <img class="logo" alt="Galerie" title="Logo pour galerie" src="{% static 'img\picto_photo.png' %}" />
+                        </a>
                     </li>
                     <li>
-                        <a href="/content/tip"><img class="logo" alt="Tips" title="Logo pour tips" src="{% static 'img\picto_tips.png' %}" /></a>
+                        <a href="/tip">
+                            <img class="logo" alt="Tips" title="Logo pour tips" src="{% static 'img\picto_tips.png' %}" />
+                        </a>
                     </li>
                     <li>
-                        <a href="/content/tip"><img class="logo" alt="Asso" title="Logo pour asso" src="{% static 'img\picto_asso.png' %}" /></a>
+                        <a href="/association">
+                            <img class="logo" alt="Asso" title="Logo pour asso" src="{% static 'img\picto_asso.png' %}" />
+                        </a>
                     </li>
                     <li>
-                        <a href="/login"><img class="logo" alt="se connecter" title="Logo pour login" src="{% static 'img\picto_profil.png' %}" /></a>
+                        <a href="/login">
+                            <img class="logo" alt="se connecter" title="Logo pour login" src="{% static 'img\picto_profil.png' %}" />
+                        </a>
                     </li>
                 </ul>
             </nav>

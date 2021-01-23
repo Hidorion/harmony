@@ -36,7 +36,16 @@
     margin-left: 10%;
     margin-right: 10%;
 }
-
+#menu-img{
+    color: var(--Ygreen);
+}
+.div-footer, .div-pagination{
+    margin: auto;
+    text-align: center;
+}
+.div-pagination span{
+    font-size: 1.2em;
+}
 @media only screen and (max-width: 768px) {
     /* Index Responsive page */
     #gallery{
