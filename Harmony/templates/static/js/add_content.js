@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    $('select').on('change', function() {
+    $('#selected').on('change', function() {
         $('#tip').toggle(false);
         $('#pic').toggle(false);
         if (this.value == "Astuce") {

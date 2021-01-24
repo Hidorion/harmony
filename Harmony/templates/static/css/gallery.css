@@ -49,7 +49,7 @@
 @media only screen and (max-width: 768px) {
     /* Index Responsive page */
     #gallery{
-        padding-top: 4%;
+        padding-top: 0%;
         padding-bottom: 80px; /*not hidden by mobile menu*/
         margin-left: 0%;
         margin-right:0%;

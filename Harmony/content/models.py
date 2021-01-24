@@ -1,10 +1,10 @@
 from django.db import models
 from ckeditor.fields import RichTextField
 from django import forms
-from django.forms import ModelForm
 from datetime import *
 from login.models import UserData
-
+from django.shortcuts import render
+from django.contrib.auth.models import User
 # class Event(models.Model):
 #     title = models.CharField(max_length=50)
 #     description = models.CharField(max_length=1000)
@@ -21,7 +21,7 @@ from login.models import UserData
 # Due to the current sanitary situation, I have decided to postpone the addition of events for now.
 
 class Image(models.Model):
-    owner = models.ForeignKey('login.UserData', on_delete=models.CASCADE)
+    owner = models.ForeignKey(User, on_delete=models.CASCADE)
     url = models.URLField(max_length=1000)
     title = models.CharField(max_length=50)
     description = models.CharField(max_length=1000)
@@ -44,7 +44,7 @@ class Tip(models.Model):
     title = models.CharField(max_length=50)
     description = models.CharField(max_length=250)
     category = models.ManyToManyField('filters.Category')
-    owner = models.ForeignKey('login.UserData', on_delete=models.CASCADE)
+    owner = models.ForeignKey(User, on_delete=models.CASCADE)
     approved = models.BooleanField(null=False , blank=True)
     content = RichTextField()
 
@@ -56,22 +56,3 @@ class Tip(models.Model):
     class Meta:
         managed = True
         db_table = 'tip'
-
-
-
-
-# Create the form class.
-class ImageForm(ModelForm):
-        class Meta:
-            model = Image
-            fields = ['owner','title',
-                      'description','url',
-                      'department','category']
-
-class TipForm(ModelForm):
-        class Meta:
-            model = Tip
-            fields = ['owner','title',
-                      'description','content','category']
-
-

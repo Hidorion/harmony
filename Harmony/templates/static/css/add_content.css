@@ -1,3 +1,4 @@
+/* GENERAL */
 #add-content body{
     margin : 0;
     padding : 0;
@@ -8,11 +9,28 @@
     margin-right:10%;
     padding-top:150px; /*not hidden by desktop menu*/
 }
-
+.div-footer{
+    margin: auto;
+    text-align: center;
+}
+.form-owner{
+    display: none;
+}
 #add-content h1 {
     text-align: center;
 }
-
+#menu-asso{
+    color: var(--Ygreen);
+}
+#add-content p {
+    color:black;
+    width: min-content;
+}
+/* FORM */
+label[for="id_owner"],
+#id_owner {
+    display: none;
+}
 #add-content form {
     display: none;
     margin: auto;
@@ -21,26 +39,21 @@
 #add-content input {
     display: block;
 }
-#add-content p {
-    color:black;
-    width: min-content;
-}
-
-#add-content button{
-    margin: auto;
-    display: block;
-}
-
 #add-content .div-select, .div-form{
     display: table;
     margin: auto;
 }
-#menu-img{
-    color: var(--Ygreen);
+#add-content .img-help{
+    width:10px;
+    margin-left: 1%;
 }
-.div-footer{
+#add-content button{
     margin: auto;
-    text-align: center;
+    display: block;
+}
+.helptext{
+    white-space: nowrap;
+    font-size: 0.5em;
 }
 @media only screen and (max-width: 768px) {
     /* Index Responsive page */

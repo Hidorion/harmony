@@ -2,23 +2,19 @@
 
 {% block navigator_title %}Add content{% endblock navigator_title %}
 {% load static %}
-
+{% load widget_tweaks %}
 {% block link%}
 <link rel="stylesheet" type="text/css" href="{% static 'css\add_content.css' %}">
 {% endblock %}
 {% block script %}
-<script
-	src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-	integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs="
-    crossorigin="anonymous">
-</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="{% static 'js\add_content.js' %}"></script>
 {% endblock %}
 
 {% block content %}
 <body>
     <div id='add-content'>
-        <h1>TEST</h1>
+        <h1>Partager</h1>
         <div class="div-select">Choisir le type de contenu à ajouter 
             <select id='selected'>
                 <option></option>
@@ -29,13 +25,13 @@
         <div class="div-form">
             <form action="" method="POST" id='pic'>
                 {% csrf_token %}
-                {{ formToAdd.as_p }}
+                {{ formImage.as_p }}
                 <button type='submit'>Push</button>
             </form>
             <form action="" method="POST" id='tip'>
                 {% csrf_token %}
-                {{ formToAlsoAdd.media}}
-                {{ formToAlsoAdd.as_p }}
+                {{ formTips.media}}
+                {{ formTips.as_p }}
                 <button type='submit'>Push</button>
             </form>
         </div>

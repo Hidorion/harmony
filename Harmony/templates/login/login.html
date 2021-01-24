@@ -8,10 +8,13 @@
 {% endblock %}
 
 {% block content %}
-<body>
-    <div class='login'>
-        <h1>LOG IN</h1>
-        <h2>SIGN UP</h2>
+<section id='login' style="padding-top: 200px;">
+    <div class="div-form">
+        <form action="" method="POST" id='pic'>
+            {% csrf_token %}
+            {{ formToAdd.as_p }}
+            <button type='submit'>Push</button>
+        </form>
     </div>
-</body>    
+</section>
 {% endblock %}

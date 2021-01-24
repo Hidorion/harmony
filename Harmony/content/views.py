@@ -6,10 +6,14 @@ from django.template import loader
 from django.contrib.auth.decorators import login_required
 from django.conf import settings
 from django.shortcuts import redirect
-from .models import Image,Tip,ImageForm,TipForm
+from django.core.paginator import Paginator
+#IMPORT DB'S MODELS
+from .models import Image,Tip
 from login.models import Association, UserData
 from filters.models import Category
-from django.core.paginator import Paginator
+from .form import ImageForm,TipForm
+
+
 
 def index(request):
     latest_images = Image.objects.filter(approved=True)[:5]
@@ -19,30 +23,38 @@ def index(request):
     return render(request, 'content/index.html', context)
 
 def gallery(request):
-    gallery = Image.objects.filter(approved=True)
-    paginator = Paginator(gallery, 5) # Show 5 pics per page.
+    wholeGallery = Image.objects.filter(approved=True)
+    paginator = Paginator(wholeGallery, 5) # Show 5 pics per page.
     page_number = request.GET.get('page') # Get the page sorted
     page_obj = paginator.get_page(page_number) # Get the number of pages
-    context = {'gallery': gallery , 'page_obj': page_obj}
+    context = {'wholeGallery': wholeGallery , 'page_obj': page_obj}
     return render(request, 'content/gallery.html', context)
+
+def tips(request):
+    listTip = Tip.objects.filter(approved=True)
+    paginator = Paginator(listTip, 3) # Show 3 tips per page.
+    page_number = request.GET.get('page') # Get the page sorted
+    page_obj = paginator.get_page(page_number) # Get the number of pages
+    context = {'listTip': listTip , 'page_obj': page_obj}
+    return render(request, 'content/tips.html', context)
 
 def adding(request):
     if not request.user.is_authenticated:
-        return redirect('%s?next=%s' % (settings.LOGIN_URL, request.path))
+        return redirect("/admin/login/?next=/content/add")
     else:
-        formToAdd = ImageForm()
-        formToAlsoAdd = TipForm()
+        formImage = ImageForm(initial={'owner': request.user.id})
+        formTips = TipForm(initial={'owner' : request.user.id})
         if request.method == 'POST' :
-            formToAdd = ImageForm(request.POST)
-            formToAlsoAdd = TipForm(request.POST)
-            if formToAdd.is_valid() :
-                formToAdd.save()
-            elif formToAlsoAdd.is_valid() :
-                formToAdd.save()
-        else :
-            formToAdd = ImageForm(initial={'owner': request.user.id})
-            formToAlsoAdd = TipForm(initial={'owner' : request.user.id})
-        context = {'formToAdd' : formToAdd , 'formToAlsoAdd' : formToAlsoAdd }
+            formImage = ImageForm(request.POST)
+            formTips = TipForm(request.POST)
+            if formImage.is_valid() :
+                formImage.save()
+            elif formTips.is_valid() :
+                formTips.save()
+            else :
+                return redirect('/content/add')
+        context = {'formImage' : formImage , 'formTips' : formTips}
+        
     return render(request, 'content/add_content.html' , context)
 
 def legal(request):

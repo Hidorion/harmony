@@ -18,7 +18,7 @@
         <h1>La Nature en images</h1>
     </header>
     <body>
-        {% if gallery %}
+        {% if wholeGallery %}
         {% for image in page_obj %}
             <div class="div-img-container">
                 <img id='{{ image.id }}' class="img-src" alt="{{ image.title }}" title="{{ image.title }}" src="{{ image.url }}" loading="lazy"/>

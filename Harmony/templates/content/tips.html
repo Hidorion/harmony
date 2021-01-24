@@ -1,0 +1,60 @@
+{% extends "menu/menu_layout.html" %}
+
+{% block navigator_title %}Tips{% endblock navigator_title %}
+{% load static %}
+
+{% block link%}
+<link rel="stylesheet" type="text/css" href="{% static 'css\tips.css' %}">
+{% endblock %}
+{% block script %}
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="{% static 'js\tips.js' %}"></script> -->
+{% endblock %}
+
+{% block content %}
+<html lang="fr">
+<section id='tips'>
+    <header >
+        <h1>La Nature et ses secrets</h1>
+    </header>
+    <body>
+        <div class='div-frame'>
+        {% if listTip %}
+        {% for tip in page_obj %}
+            <ul class="ul-frame">
+                <li class="li-tips-frame">
+                    <div class='div-tips'>
+                        <ul>
+                            <li>{{ tip.title }}</li>
+                            <li>Catégorie :  {% for cat in tip.category.all %}{{ cat }} {% endfor %}</li>
+                            <li>Par : {{ tip.owner }}</li>
+                            <li>{{ tip.description|safe }}</li>
+                            <li class='content'>{{ tip.content|safe }}</li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        {% endfor %}
+        {% endif %}
+        </div>
+        <div class="div-pagination">
+            <span class="step-links">
+                {% if page_obj.has_previous %}
+                    <a href="?page=1">&laquo;</a>
+                    <a href="?page={{ page_obj.previous_page_number }}"><</a>
+                {% endif %}
+    
+                <span class="current">
+                    Page {{ page_obj.number }} sur {{ page_obj.paginator.num_pages }}.
+                </span>
+    
+                {% if page_obj.has_next %}
+                    <a href="?page={{ page_obj.next_page_number }}">></a>
+                    <a href="?page={{ page_obj.paginator.num_pages }}">&raquo;</a>
+                {% endif %}
+            </span>
+        </div>
+    </body>
+</section>
+</html>    
+{% endblock %}

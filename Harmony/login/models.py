@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.forms import ModelForm
 
 class UserData(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
@@ -39,3 +40,10 @@ class Association(models.Model):
         """
 
         return f"{self.name},{self.approved}"
+
+
+# Create the form class.
+class LoginForm(ModelForm):
+        class Meta:
+            model = User
+            fields = ['username', 'password']

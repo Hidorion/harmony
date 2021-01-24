@@ -1,0 +1,64 @@
+#tips ul{
+    list-style: none;
+    color : var(--green);
+    padding: 0;
+}
+#tips body{
+    margin : 0;
+    padding : 0;
+}
+#tips{
+    border:solid 2px var(--Dgreen);
+    margin-left:10%;
+    margin-right:10%;
+    padding-top:150px; /*not hidden by desktop menu*/
+}
+#tips h1{
+    text-align: center;
+    color: var(--Ygreen);
+    background: var(--green);
+}
+.div-footer, .div-pagination{
+    margin: auto;
+    text-align: center;
+}
+.div-pagination span{
+    font-size: 1.2em;
+}
+#menu-tip{
+    color: var(--Ygreen);
+}
+
+li .content {
+    border: solid 1px var(--green);
+}
+
+.div-frame{
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+.ul-frame{
+    max-width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+}
+@media only screen and (max-width: 768px) {
+    /* Index Responsive page */
+    #tips{
+        padding-top: 0%;
+        padding-bottom: 80px; /*not hidden by mobile menu*/
+        margin-left: 0%;
+        margin-right:0%;
+        border:none;
+    }
+    .div-frame{
+        display: grid;
+        grid-template-columns: auto ;
+    }
+    .ul-frame{
+        max-width: 95%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+}
