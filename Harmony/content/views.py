@@ -40,7 +40,7 @@ def tips(request):
 
 def adding(request):
     if not request.user.is_authenticated:
-        return redirect("/admin/login/?next=/content/add")
+        return redirect("/adminature/login/?next=/content/add")
     else:
         formImage = ImageForm(initial={'owner': request.user.id})
         formTips = TipForm(initial={'owner' : request.user.id})
