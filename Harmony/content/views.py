@@ -16,7 +16,7 @@ from .form import ImageForm,TipForm
 
 
 def index(request):
-    latest_images = Image.objects.filter(approved=True)[:5]
+    latest_images = Image.objects.filter(approved=True)[5:]
     associations = Association.objects.filter(approved=True)
     tips = Tip.objects.filter(approved=True)
     context = {'latest_images': latest_images , 'associations': associations , 'tips' : tips}
@@ -44,16 +44,20 @@ def adding(request):
     else:
         formImage = ImageForm(initial={'owner': request.user.id})
         formTips = TipForm(initial={'owner' : request.user.id})
+        formSuccess = ""
         if request.method == 'POST' :
             formImage = ImageForm(request.POST)
             formTips = TipForm(request.POST)
             if formImage.is_valid() :
                 formImage.save()
+                formSuccess = "Partage réussi"
             elif formTips.is_valid() :
                 formTips.save()
+                formSuccess = "Partage réussi"
             else :
+                formSuccess = "Il y a eu une erreur, il faut recommencer désolé"
                 return redirect('/content/add')
-        context = {'formImage' : formImage , 'formTips' : formTips}
+        context = {'formImage' : formImage , 'formTips' : formTips, 'formSuccess' : formSuccess} 
         
     return render(request, 'content/add_content.html' , context)
 
