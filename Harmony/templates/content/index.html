@@ -23,7 +23,6 @@
                 {% if latest_images %}
                     {% for image in latest_images %}
                         <img class="img-src hidden" alt="{{ image.title }}" title="{{ image.title }}" src="{{ image.url }}" id="{{ image.id }}"/>
-                        <!-- <div class="div-event hidden"><a class="a-title" target='_blank' ><div class="div-img-menu hidden">{{ image.title }}</div></a></div> -->
                     {% endfor %}
                 {% else %}
                     <p>No images are available.</p>

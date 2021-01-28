@@ -66,4 +66,7 @@ label[for="id_owner"],
         margin-right:0%;
         border:none;
     }
+    .div-footer{
+        display: none;
+    }
 }

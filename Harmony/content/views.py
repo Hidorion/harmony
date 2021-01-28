@@ -16,7 +16,7 @@ from .form import ImageForm,TipForm
 
 
 def index(request):
-    latest_images = Image.objects.filter(approved=True)[5:]
+    latest_images = Image.objects.filter(approved=True).order_by('-posting_date')[:5]
     associations = Association.objects.filter(approved=True)
     tips = Tip.objects.filter(approved=True)
     context = {'latest_images': latest_images , 'associations': associations , 'tips' : tips}
