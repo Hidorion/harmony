@@ -10,10 +10,11 @@
     padding-top:150px; /*not hidden by desktop menu*/
 }
 .div-footer{
-    position: absolute;
+    display: None;
+    /* position: absolute;
     bottom: 0;
     left: 40%;
-    right: 40%;
+    right: 40%; */
 }
 .form-owner{
     display: none;
